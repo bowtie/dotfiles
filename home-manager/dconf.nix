@@ -29,7 +29,6 @@
         "org.gnome.design.IconLibrary.desktop"
         "org.gnome.seahorse.Application.desktop"
         "org.gnome.Weather.desktop"
-        "org.gnome.Boxes.desktop"
       ];
     };
 
@@ -89,7 +88,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
-      command = "wez";
+      command = "kitty";
       name = "term";
     };
 
@@ -103,16 +102,8 @@
     "org/gnome/shell" = {
       favorite-apps = [
         "firefox.desktop"
-        "org.wezfurlong.wezterm.desktop"
         "org.gnome.Nautilus.desktop"
         "org.gnome.Calendar.desktop"
-        "obsidian.desktop"
-        "transmission-gtk.desktop"
-        "caprine.desktop"
-        "teams-for-linux.desktop"
-        "discord.desktop"
-        "spotify.desktop"
-        "com.usebottles.bottles.desktop"
         "org.gnome.Software.desktop"
       ];
     };
@@ -130,7 +121,7 @@
     };
 
     "com/github/stunkymonkey/nautilus-open-any-terminal" = {
-      terminal = "wezterm";
+      terminal = "kitty";
     };
   };
 }
