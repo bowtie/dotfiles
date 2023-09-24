@@ -7,44 +7,52 @@
 }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.common-ssd
+    inputs.hardware.nixosModules.common-pc-laptop-ssd
+    inputs.hardware.nixosModules.common-hidpi
 
     ./hardware-configuration.nix
+    ./bootloader.nix
+    ./gnome.nix
+    ./hyprland.nix
+    ./locale.nix
+    ./nix.nix
+    ./sound.nix
   ];
 
-  nixpkgs = {
-    overlays = [
-      # later
-    ];
-    config = {
-      allowUnfree = true;
-    };
+  programs = {
+    dconf.enable = true;
   };
 
-  nix = {
-    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
+  environment.systemPackages = with pkgs; [
+    gnome.gnome-software # for flatpak
+    home-manager
+    neovim
+    git
+    wget
+  ];
 
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
-    settings = {
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
-    };
+  services = {
+    xserver.enable = true;
+    xserver.excludePackages = [ pkgs.xterm ];
+    flatpak.enable = true;
   };
 
-  networking.hostName = "swift";
-
-  boot.loader.systemd-boot.enable = true;
+  # KDE Connect
+  networking.firewall = rec {
+    allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    allowedUDPPortRanges = allowedTCPPortRanges;
+  };
 
   users.users = {
     zsh = {
-      initialPassword = "nixos";
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # add later
-      ];
       extraGroups = ["networkmanager", "wheel"];
     };
+  };
+
+  networking = {
+    hostName = "swift";
+    networkmanager.enable = true;
   };
 
   services.openssh = {
