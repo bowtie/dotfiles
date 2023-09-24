@@ -1,5 +1,3 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
   lib,
@@ -7,31 +5,26 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
   imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+    ./ags.nix
+    ./browser.nix
+    ./dconf.nix
+    ./hyprland.nix
+    ./packages.nix
+    ./theme.nix
   ];
 
-  nixpkgs = {
-    # You can add overlays here
-    overlays = [
-      # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
+  targets.genericLinux.enable = true;
 
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-    ];
-    # Configure your nixpkgs instance
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+  };
+
+  nixpkgs = {
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
@@ -41,13 +34,38 @@
   home = {
     username = "zsh";
     homeDirectory = "/home/zsh";
+
+    sessionVariables = {
+      QT_XCB_GL_INTEGRATION = "none"; # kde-connect
+      NIXPKGS_ALLOW_UNFREE = "1";
+      SHELL = "${pkgs.zsh}/bin/fish";
+    };
+
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  gtk.gtk3.bookmarks = [
+    "file://${homeDirectory}/Documents"
+    "file://${homeDirectory}/Music"
+    "file://${homeDirectory}/Pictures"
+    "file://${homeDirectory}/Videos"
+    "file://${homeDirectory}/Downloads"
+    "file://${homeDirectory}/Projects Projects"
+    "file://${homeDirectory}/Vault Vault"
+    "file://${homeDirectory}/Vault/School School"
+    "file://${homeDirectory}/.config Config"
+    "file://${homeDirectory}/.local/share Local"
+  ];
 
-  # Enable home-manager and git
+  services = {
+    kdeconnect = {
+      enable = true;
+      indicator = true;
+    };
+  };
+
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
