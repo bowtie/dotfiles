@@ -46,7 +46,7 @@
   users.users = {
     zsh = {
       isNormalUser = true;
-      extraGroups = ["networkmanager", "wheel"];
+      extraGroups = ["networkmanager" "wheel"];
     };
   };
 
