@@ -44,7 +44,7 @@ in
     enable = true;
     package = hyprland;
     systemdIntegration = true;
-    enableNvidiaPatches = true;
+    # enableNvidiaPatches = true;
     xwayland.enable = true;
     extraConfig = ''
       source=~/.config/hypr/config/monitors.conf
