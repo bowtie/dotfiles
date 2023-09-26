@@ -22,9 +22,13 @@
     inherit (self) outputs;
   in {
     nixosConfigurations = {
+      miya = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/desktop/configuration.nix];
+      };
       swift = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./nixos/configuration.nix];
+        modules = [./hosts/laptop/configuration.nix];
       };
     };
 
@@ -32,7 +36,7 @@
       "zsh@swift" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/home.nix];
+        modules = [./home/home.nix];
       };
     };
   };
