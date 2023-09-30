@@ -18,8 +18,11 @@
     d-spy
     easyeffects
     # discord
+    github-desktop
     # bottles
     icon-library
+    vscodium
+    keepassxc
 
     # tools
     bat

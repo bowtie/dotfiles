@@ -8,5 +8,5 @@
     (python311.withPackages (p: [p.python-pam]))
   ];
 
-  xdg.configFile.ags.source = ../ags;
+  xdg.configFile.ags.source = ../config/ags;
 }

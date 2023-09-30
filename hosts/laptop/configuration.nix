@@ -1,22 +1,18 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, pkgs, username, ... }: {
+
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-pc-laptop-ssd
     inputs.hardware.nixosModules.common-hidpi
 
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
     ./gnome.nix
     ./hyprland.nix
     ./locale.nix
     ./nix.nix
     ./sound.nix
+    ../../modules/adguard.nix
   ];
 
   programs = {
@@ -26,9 +22,10 @@
   environment.systemPackages = with pkgs; [
     gnome.gnome-software # for flatpak
     home-manager
-    neovim
     git
     wget
+    pulseaudio
+    nerdfonts
   ];
 
   services = {
@@ -43,11 +40,9 @@
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
-  users.users = {
-    zsh = {
+  users.users.${username} = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel"];
-    };
   };
 
   networking = {
