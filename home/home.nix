@@ -1,10 +1,7 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ pkgs, username, ... }:
+let
+  homeDirectory = "/home/${username}";
+in {
   imports = [
     ./ags.nix
     ./browser.nix
@@ -15,6 +12,7 @@
     ./packages.nix
     ./starship.nix
     ./theme.nix
+    ./wezterm.nix
   ];
 
   targets.genericLinux.enable = true;
@@ -35,8 +33,7 @@
   };
 
   home = {
-    username = "zsh";
-    homeDirectory = "/home/zsh";
+    inherit username homeDirectory;
 
     sessionVariables = {
       QT_XCB_GL_INTEGRATION = "none"; # kde-connect
@@ -68,7 +65,6 @@
   };
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

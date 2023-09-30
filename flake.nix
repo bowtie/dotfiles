@@ -13,31 +13,29 @@
     hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-  in {
-    nixosConfigurations = {
-      miya = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+  outputs = { nixpkgs, home-manager, ... }@inputs:
+  let 
+    username = "zoushie";
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in
+    {
+	nixosConfigurations."miya" = nixpkgs.lib.nixosSystem {
+	specialArgs = { inherit inputs username system; };
         modules = [./hosts/desktop/configuration.nix];
       };
-      swift = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+	nixosConfigurations."swift" = nixpkgs.lib.nixosSystem {
+	specialArgs = { inherit inputs username system; };
         modules = [./hosts/laptop/configuration.nix];
       };
-    };
 
-    homeConfigurations = {
-      "zsh@swift" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/home.nix];
-      };
+    homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = { inherit inputs username pkgs; };
+      modules = [ ./home/home.nix ];
     };
   };
 }

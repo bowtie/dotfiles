@@ -4,7 +4,6 @@ import { Volume, SinkSelector, AppMixer } from './widgets/Volume.js';
 import { NetworkToggle, WifiSelection } from './widgets/Network.js';
 import { BluetoothToggle, BluetoothDevices } from './widgets/Bluetooth.js';
 import { ThemeToggle, ThemeSelector } from './widgets/Theme.js';
-import { ProfileToggle, ProfileSelector } from './widgets/AsusProfile.js';
 import Media from './widgets/Media.js';
 import Brightness from './widgets/Brightness.js';
 import DND from './widgets/DND.js';
@@ -56,8 +55,8 @@ export default () => PopupWindow({
                 [WifiSelection(), BluetoothDevices()],
             ),
             Row(
-                [Homogeneous([ProfileToggle(), ThemeToggle()]), MicMute()],
-                [ProfileSelector(), ThemeSelector()],
+                [Homogeneous([ThemeToggle()]), MicMute()],
+                [ThemeSelector()],
             ),
             // Row(
             //     [DND(), MicMute()],

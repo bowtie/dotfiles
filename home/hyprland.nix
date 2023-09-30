@@ -38,7 +38,7 @@ in
   };
 
   home.packages = [ launcher ];
-  home.file.".config/hypr/config".source = ../hypr;
+  home.file.".config/hypr/config".source = ../config/hypr;
 
   wayland.windowManager.hyprland = {
     enable = true;
