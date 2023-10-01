@@ -9,6 +9,7 @@ in {
     ./fish.nix
     ./hyprland.nix
     ./kitty.nix
+    ./neofetch.nix
     ./packages.nix
     ./starship.nix
     ./theme.nix
