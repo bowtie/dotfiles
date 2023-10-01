@@ -11,9 +11,14 @@
     hyprland.url = "github:hyprwm/Hyprland";
     ags.url = "github:Aylur/ags";
     hardware.url = "github:nixos/nixos-hardware";
+
+    auto-cpufreq = {
+        url = "github:adnanhodzic/auto-cpufreq/nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, auto-cpufreq, ... }@inputs:
   let 
     username = "zoushie";
     system = "x86_64-linux";
@@ -29,7 +34,10 @@
       };
 	nixosConfigurations."swift" = nixpkgs.lib.nixosSystem {
 	specialArgs = { inherit inputs username system; };
-        modules = [./hosts/laptop/configuration.nix];
+        modules = [
+          ./hosts/laptop/configuration.nix
+          auto-cpufreq.nixosModules.default
+        ];
       };
 
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
