@@ -7,6 +7,7 @@ in {
     ./browser.nix
     ./dconf.nix
     ./fish.nix
+    ./gammastep.nix
     ./hyprland.nix
     ./kitty.nix
     ./neofetch.nix
