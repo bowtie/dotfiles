@@ -6,7 +6,7 @@ in {
     ./ags.nix
     ./browser.nix
     ./dconf.nix
-    ./fish.nix
+    # ./fish.nix
     ./hyprland.nix
     ./kitty.nix
     ./packages.nix
@@ -38,7 +38,7 @@ in {
     sessionVariables = {
       QT_XCB_GL_INTEGRATION = "none"; # kde-connect
       NIXPKGS_ALLOW_UNFREE = "1";
-      SHELL = "${pkgs.zsh}/bin/fish";
+      SHELL = "${pkgs.fish}/bin/fish";
     };
 
     sessionPath = [

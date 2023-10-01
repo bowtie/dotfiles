@@ -18,6 +18,7 @@
 
   programs = {
     dconf.enable = true;
+    fish.enable = true;
     auto-cpufreq.enable = true;
     auto-cpufreq.settings = {
       charger = {
@@ -40,6 +41,11 @@
     nerdfonts
   ];
 
+  # use Wayland where possible (electron)
+  environment.variables.NIXOS_OZONE_WL = "1";
+
+  environment.shells = with pkgs; [ fish ];
+
   services = {
     xserver.enable = true;
     xserver.excludePackages = [ pkgs.xterm ];
@@ -55,6 +61,7 @@
 
   users.users.${username} = {
       isNormalUser = true;
+      shell = pkgs.fish;
       extraGroups = ["networkmanager" "wheel"];
   };
 
