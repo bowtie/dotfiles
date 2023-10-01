@@ -13,6 +13,7 @@
     ./nix.nix
     ./sound.nix
     ../../modules/adguard.nix
+    ../../modules/power-switcher.nix
   ];
 
   programs = {
@@ -43,6 +44,7 @@
     xserver.enable = true;
     xserver.excludePackages = [ pkgs.xterm ];
     flatpak.enable = true;
+    power-profiles-daemon.enable = false;
   };
 
   # KDE Connect
