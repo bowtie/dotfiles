@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
     url = "https://download01.xp-pen.com/file/2023/07/XPPenLinux${version}.x86_64.tar.gz";
     name = "xp-pen-driver-${version}.tar.gz";
     # fix this later
-    # sha256 = "sha256-";
+    sha256 = "sha256-";
   };
 
   nativeBuildInputs = [

@@ -5,8 +5,8 @@
     # Pick "name" from https://github.com/kovidgoyal/kitty-themes/blob/master/themes.json
     theme = "Tokyo Night";
     font = {
-      name = "Monaco";
-      size = 14;
+      name = "Iosevka Nerd Font";
+      size = 15.2;
     };
     keybindings = {
       "kitty_mod+e" = "kitten hints"; # https://sw.kovidgoyal.net/kitty/kittens/hints/

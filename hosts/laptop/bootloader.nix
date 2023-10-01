@@ -11,7 +11,7 @@
 
   # build and load custom drivers
   # boot.extraModulePackages = with config.boot.kernelPackages; [
-  #   (callPackage ../../packages/acer-wmi-battery.nix {})
+  #   (callPackage ../../pkgs/acer-wmi-battery.nix {})
   # ];
   # boot.kernelModules = [ "acer-wmi-battery" ];
   
