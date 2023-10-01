@@ -13,7 +13,7 @@
     hardware.url = "github:nixos/nixos-hardware";
 
     auto-cpufreq = {
-        url = "github:adnanhodzic/auto-cpufreq/nix";
+        url = "github:adnanhodzic/auto-cpufreq";
         inputs.nixpkgs.follows = "nixpkgs";
     };
   };
