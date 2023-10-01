@@ -1,4 +1,4 @@
-{
+{ pkgs, config, ... }:{
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.loader = {
@@ -6,6 +6,8 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #build and load custom drivers
   boot.extraModulePackages = with config.boot.kernelPackages; [
