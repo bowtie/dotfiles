@@ -6,7 +6,7 @@ in {
     ./ags.nix
     ./browser.nix
     ./dconf.nix
-    # ./fish.nix
+    ./fish.nix
     ./hyprland.nix
     ./kitty.nix
     ./packages.nix
