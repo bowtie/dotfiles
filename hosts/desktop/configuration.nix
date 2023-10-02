@@ -18,9 +18,6 @@
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
     ../../modules/sound/sound.nix
-    ../../modules/dns/adguard.nix
-    ../../modules/dns/dnscrypt.nix
-    ../../modules/power/switcher.nix
   ];
 
   virtualisation = {
@@ -30,10 +27,12 @@
 
   programs = {
     dconf.enable = true;
+    fish.enable = true;
   };
 
+  environment.shells = with pkgs; [fish];
+
   environment.systemPackages = with pkgs; [
-    gnome.gnome-software # for flatpak
     home-manager
     git
     wget
