@@ -13,6 +13,7 @@
     ./nix.nix
     ./sound.nix
     ../../modules/adguard.nix
+    ../../modules/dnscrypt-proxy.nix
     ../../modules/power-switcher.nix
   ];
 
