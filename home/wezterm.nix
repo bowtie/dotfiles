@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   weztem = "${pkgs.wezterm}/bin/wezterm start --cwd .";
   wez = pkgs.writeShellScriptBin "wez" ''
     if command -v "nixGLIntel" &> /dev/null; then
@@ -9,13 +8,13 @@ let
     fi
   '';
 
-  substitute = name: pkgs.writeShellScriptBin name ''
-    wezterm "$@"
-  '';
-in 
-{
+  substitute = name:
+    pkgs.writeShellScriptBin name ''
+      wezterm "$@"
+    '';
+in {
   home = {
-    packages = [ wez (substitute "xterm") ];
+    packages = [wez (substitute "xterm")];
     sessionVariables.TERMINAL = "wez";
   };
 
@@ -27,7 +26,7 @@ in
     comment = "Wez's Terminal Emulator";
     icon = "org.wezfurlong.wezterm";
     exec = "${wez}/bin/wez %F";
-    categories = [ "System" "TerminalEmulator" "Utility" ];
+    categories = ["System" "TerminalEmulator" "Utility"];
     terminal = false;
   };
 }

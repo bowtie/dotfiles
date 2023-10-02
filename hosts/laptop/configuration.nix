@@ -1,5 +1,9 @@
-{ inputs, pkgs, username, ... }: {
-
+{
+  inputs,
+  pkgs,
+  username,
+  ...
+}: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-pc-laptop-ssd
@@ -45,25 +49,30 @@
   # use Wayland where possible (electron)
   environment.variables.NIXOS_OZONE_WL = "1";
 
-  environment.shells = with pkgs; [ fish ];
+  environment.shells = with pkgs; [fish];
 
   services = {
     xserver.enable = true;
-    xserver.excludePackages = [ pkgs.xterm ];
+    xserver.excludePackages = [pkgs.xterm];
     flatpak.enable = true;
     power-profiles-daemon.enable = false;
   };
 
   # KDE Connect
   networking.firewall = rec {
-    allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
   users.users.${username} = {
-      isNormalUser = true;
-      shell = pkgs.fish;
-      extraGroups = ["networkmanager" "wheel"];
+    isNormalUser = true;
+    shell = pkgs.fish;
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   networking = {

@@ -1,5 +1,8 @@
-{ inputs, pkgs, ... }:
-let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
 
   launcher = pkgs.writeShellScriptBin "hypr" ''
@@ -26,18 +29,17 @@ let
         exec ${hyprland}/bin/Hyprland
     fi
   '';
-in
-{
+in {
   xdg.desktopEntries."org.gnome.Settings" = {
     name = "Settings";
     comment = "Gnome Control Center";
     icon = "org.gnome.Settings";
     exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
-    categories = [ "X-Preferences" ];
+    categories = ["X-Preferences"];
     terminal = false;
   };
 
-  home.packages = [ launcher ];
+  home.packages = [launcher];
   home.file.".config/hypr/config".source = ../config/hypr;
 
   wayland.windowManager.hyprland = {

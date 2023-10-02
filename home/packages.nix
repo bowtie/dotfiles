@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # hide entries
   xdg.desktopEntries = {
     "ranger" = {
@@ -8,12 +7,13 @@
     };
   };
 
-  home.packages = with pkgs; with nodePackages_latest; [
+  home.packages = with pkgs;
+  with nodePackages_latest; [
     # colorscript
-    (import ./colorscript.nix { inherit pkgs; })
+    (import ./colorscript.nix {inherit pkgs;})
 
     # gui
-    (mpv.override { scripts = [mpvScripts.mpris]; })
+    (mpv.override {scripts = [mpvScripts.mpris];})
     # spotify
     d-spy
     easyeffects

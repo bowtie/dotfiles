@@ -8,7 +8,6 @@
 let
   programs = lib.makeBinPath [inputs.hyprland.packages.${pkgs.system}.default];
 
-
   unplugged = pkgs.writeShellScript "unplugged" ''
     export PATH=$PATH:${programs}
     export HYPRLAND_INSTANCE_SIGNATURE=$(ls -w1 /tmp/hypr | tail -1)
