@@ -1,9 +1,13 @@
-{ pkgs, lib, ... }: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   config = {
     networking = {
       firewall = {
-        allowedTCPPorts = [ 3000 ];
-        allowedUDPPorts = [ 53 ];
+        allowedTCPPorts = [3000];
+        allowedUDPPorts = [53];
       };
     };
 
@@ -20,15 +24,14 @@
             upstream_dns = [
               "192.168.1.1:53"
             ];
-            bootstrap_dns =
-              [ "9.9.9.10" "149.112.112.10" "2620:fe::10" "2620:fe::fe:10" ];
+            bootstrap_dns = ["9.9.9.10" "149.112.112.10" "2620:fe::10" "2620:fe::fe:10"];
             resolve_clients = true;
             statistics.interval = "24h";
           };
         };
         extraArgs = [
-        # Router knows best, i.e. stop returning 127.0.0.1 for DNS calls for self
-        "--no-etc-hosts"
+          # Router knows best, i.e. stop returning 127.0.0.1 for DNS calls for self
+          "--no-etc-hosts"
         ];
       };
     };
