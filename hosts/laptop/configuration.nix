@@ -57,6 +57,7 @@
     xserver.excludePackages = [pkgs.xterm];
     flatpak.enable = true;
     power-profiles-daemon.enable = false;
+    logind.lidSwitch = "ignore";
   };
 
   # KDE Connect
