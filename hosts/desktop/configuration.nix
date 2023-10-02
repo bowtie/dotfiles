@@ -7,16 +7,20 @@
 }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
+    inputs.hardware.nixosModules.common-cpu-amd-pstate
     inputs.hardware.nixosModules.common-pc-ssd
 
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
-    ./gnome.nix
-    ./hyprland.nix
-    ./locale.nix
-    ./nix.nix
-    ./nvidia.nix
-    ./sound.nix
+    ../../modules/session/kde.nix
+    ../../modules/session/hyprland.nix
+    ../../modules/graphics/nvidia.nix
+    ../../modules/language/locale.nix
+    ../../modules/nix/nix.nix
+    ../../modules/sound/sound.nix
+    ../../modules/dns/adguard.nix
+    ../../modules/dns/dnscrypt.nix
+    ../../modules/power/switcher.nix
   ];
 
   virtualisation = {
@@ -31,28 +35,31 @@
   environment.systemPackages = with pkgs; [
     gnome.gnome-software # for flatpak
     home-manager
-    neovim
     git
     wget
   ];
 
   services = {
     xserver.enable = true;
-    xserver.excludePackages = [ pkgs.xterm ];
+    xserver.excludePackages = [pkgs.xterm];
     flatpak.enable = true;
   };
 
   # KDE Connect
   networking.firewall = rec {
-    allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 
-  users.users = {
-    zsh = {
-      isNormalUser = true;
-      extraGroups = ["networkmanager", "wheel"];
-    };
+  users.users.${username} = {
+    isNormalUser = true;
+    shell = pkgs.fish;
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   networking = {

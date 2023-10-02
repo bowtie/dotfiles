@@ -6,19 +6,20 @@
 }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
+    inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-laptop-ssd
     inputs.hardware.nixosModules.common-hidpi
 
     /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
-    ./gnome.nix
-    ./hyprland.nix
-    ./locale.nix
-    ./nix.nix
-    ./sound.nix
-    ../../modules/adguard.nix
-    ../../modules/dnscrypt-proxy.nix
-    ../../modules/power-switcher.nix
+    ../../modules/session/gnome.nix
+    ../../modules/session/hyprland.nix
+    ../../modules/language/locale.nix
+    ../../modules/nix/nix.nix
+    ../../modules/sound/sound.nix
+    ../../modules/dns/adguard.nix
+    ../../modules/dns/dnscrypt.nix
+    ../../modules/power/switcher.nix
   ];
 
   programs = {

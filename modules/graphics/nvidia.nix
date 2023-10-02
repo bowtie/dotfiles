@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   hardware.opengl = {
     enable = true;
     driSupport = true;
@@ -20,4 +19,8 @@
     nvidiaSettings = true; # gui app
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
+
+  # nvidia hyprland patches
+  wayland.windowManager.hyprland.enableNvidiaPatches = true;
+  programs.hyprland.enableNvidiaPatches = true;
 }
