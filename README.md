@@ -6,4 +6,3 @@
 - [ ] neovim / helix
 - [ ] home profiles
 - [ ] theme
-- [ ] xdg kitty

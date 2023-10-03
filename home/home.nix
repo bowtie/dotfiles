@@ -45,6 +45,7 @@ in {
       QT_XCB_GL_INTEGRATION = "none"; # kde-connect
       NIXPKGS_ALLOW_UNFREE = "1";
       SHELL = "${pkgs.fish}/bin/fish";
+      TERMINAL = "kitty";
     };
 
     sessionPath = [

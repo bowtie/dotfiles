@@ -6,7 +6,6 @@
 in {
   home = {
     packages = with pkgs; [blackbox-terminal (substitute "xterm")];
-    sessionVariables.TERMINAL = "blackbox";
   };
 
   home.file.".local/share/blackbox/schemes/japanesque.json".text = ''
