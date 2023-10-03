@@ -6,3 +6,4 @@
 - [ ] neovim / helix
 - [ ] home profiles
 - [ ] theme
+- [ ] agenix
