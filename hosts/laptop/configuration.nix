@@ -12,7 +12,7 @@
 
     /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
-    ../../modules/session/gnome.nix
+    # ../../modules/session/gnome.nix
     ../../modules/session/hyprland.nix
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
@@ -57,7 +57,7 @@
     xserver.excludePackages = [pkgs.xterm];
     flatpak.enable = true;
     power-profiles-daemon.enable = false;
-    logind.lidSwitch = "ignore";
+    logind.lidSwitchExternalPower = "ignore";
   };
 
   # KDE Connect
