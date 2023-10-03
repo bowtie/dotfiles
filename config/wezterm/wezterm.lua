@@ -3,8 +3,9 @@ return {
 		["Gnome Light"] = require("gnome"),
 		["Charmful Dark"] = require("charmful"),
 	},
-	color_scheme = "Charmful Dark",
-	font = require("wezterm").font("CaskaydiaCove NF"),
+	color_scheme = "tokyonight_night";
+	font = require("wezterm").font("Iosevka Nerd Font"),
+	font_size = 15.2,
 	default_cursor_style = "BlinkingBar",
 
 	default_prog = { "fish" },
@@ -23,7 +24,7 @@ return {
 		brightness = 0.8,
 	},
 
-	window_background_opacity = 1.0,
+	window_background_opacity = 0.8,
 	text_background_opacity = 1.0,
 
 	keys = require("keys"),
