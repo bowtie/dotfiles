@@ -8,7 +8,8 @@
   };
 
   home.packages = with pkgs;
-  with nodePackages_latest; [
+  with nodePackages_latest;
+  with gnome; [
     # colorscript
     (import ./colorscript.nix {inherit pkgs;})
 
@@ -23,6 +24,8 @@
     icon-library
     vscodium
     keepassxc
+    signal-desktop
+    dconf-editor
 
     # tools
     bat
@@ -37,6 +40,7 @@
     inotify-tools
     ffmpeg
     libnotify
+    killall
 
     # hyprland
     wl-gammactl

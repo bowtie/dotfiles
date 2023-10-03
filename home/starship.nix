@@ -58,7 +58,7 @@ in {
         truncation_symbol = "~/…/";
       };
       directory.substitutions = {
-        "Documents" = " ";
+        "Documents" = "󰈙 ";
         "Downloads" = " ";
         "Music" = " ";
         "Pictures" = " ";
@@ -67,6 +67,7 @@ in {
         "School" = "󰑴 ";
         "GitHub" = "";
         ".config" = " ";
+        "Vault" = "󱉽 ";
       };
       git_branch = {
         symbol = "";

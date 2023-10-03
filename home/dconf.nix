@@ -64,6 +64,7 @@ with lib.hm.gvariant; {
       mouse-button-modifier = "<Super>";
       num-workspaces = 5;
       resize-with-right-button = true;
+      focus-mode = "sloppy";
     };
 
     "org/gnome/mutter" = {

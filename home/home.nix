@@ -7,6 +7,7 @@
 in {
   imports = [
     ./ags.nix
+    ./blackbox.nix
     ./browser.nix
     ./dconf.nix
     ./fish.nix
@@ -57,7 +58,8 @@ in {
     "file://${homeDirectory}/Pictures"
     "file://${homeDirectory}/Videos"
     "file://${homeDirectory}/Downloads"
-    "file://${homeDirectory}/Projects Projects"
+    "file://${homeDirectory}/Desktop"
+    "file://${homeDirectory}/Projects"
     "file://${homeDirectory}/.config Config"
     "file://${homeDirectory}/.local/share Local"
   ];
