@@ -7,3 +7,4 @@
 - [ ] home profiles
 - [ ] theme
 - [ ] agenix
+- [ ] electron wl fix
