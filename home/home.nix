@@ -13,6 +13,7 @@ in {
     ./fish.nix
     ./gammastep.nix
     ./hyprland.nix
+    ./lf.nix
     ./kitty.nix
     ./neofetch.nix
     ./packages.nix
@@ -46,6 +47,9 @@ in {
       NIXPKGS_ALLOW_UNFREE = "1";
       SHELL = "${pkgs.fish}/bin/fish";
       TERMINAL = "kitty";
+      BAT_THEME = "base16";
+      GOPATH = "${homeDirectory}/.local/share/go";
+      GOMODCACHE = "${homeDirectory}/go/pkg/mod";
     };
 
     sessionPath = [

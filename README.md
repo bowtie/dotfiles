@@ -8,3 +8,5 @@
 - [ ] theme
 - [ ] agenix
 - [ ] electron wl fix
+- [ ] #258524
+- [ ] fix wifi powersave while plugged

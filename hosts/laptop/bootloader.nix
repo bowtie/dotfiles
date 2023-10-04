@@ -11,7 +11,7 @@
     efi.canTouchEfiVariables = true;
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # build and load custom drivers
   # boot.extraModulePackages = with config.boot.kernelPackages; [
