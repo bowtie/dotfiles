@@ -120,6 +120,34 @@
         "type": "github"
       }
     },
+    "lf-icons": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-huCezig50vS1924wqipNDmG9B99sr0h79dXZ7CH/yi8=",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example"
+      }
+    },
+    "nixos": {
+      "locked": {
+        "lastModified": 1696193975,
+        "narHash": "sha256-mnQjUcYgp9Guu3RNVAB2Srr1TqKcPpRXmJf4LJk6KRY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "fdd898f8f79e8d2f99ed2ab6b3751811ef683242",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1693471703,
@@ -168,6 +196,21 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1696448189,
+        "narHash": "sha256-CoqCKwXu145u3rXAn3WezzhpZqElg24EoT4i21EGFAo=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "df13b003f096c88955f27970ed00d89dce786c85",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "ags": "ags",
@@ -175,7 +218,10 @@
         "hardware": "hardware",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nixpkgs": "nixpkgs_3"
+        "lf-icons": "lf-icons",
+        "nixos": "nixos",
+        "nixpkgs": "nixpkgs_3",
+        "nur": "nur"
       }
     },
     "systems": {
