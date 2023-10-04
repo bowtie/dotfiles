@@ -1,15 +1,14 @@
 {pkgs, ...}: let
   betterfox =
-    pkgs.fetchFromGitHub
+    pkgs.fetchurl
     {
-      owner = "yokoffing";
-      repo = "Betterfox";
-      rev = "137afcd1da03ceff6d6251cb54517dc55436afe6";
-      hash = "sha256-uQXcOWSVB2nfwZ+c6BkEyx1xtCl9FA+hh5XDfa62ZOw=";
+      url = "https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js";
+      hash = "sha256-V09SBDu9RgOd2BHmMjbqyGGKdnIx4nBmW5u6f5Iu1L4=";
     };
 in {
   home = {
     sessionVariables.BROWSER = "firefox";
+    sessionVariables.MOZ_USE_XINPUT2 = "1";
 
     file."firefox-gnome-theme" = {
       target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
@@ -44,7 +43,7 @@ in {
         "gnomeTheme.normalWidthTabs" = true;
         "gnomeTheme.tabsAsHeaderbar" = true;
       };
-      extraConfig = builtins.readFile (betterfox + "/user.js");
+      extraConfig = builtins.readFile betterfox;
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";
         @import "firefox-gnome-theme/theme/colors/dark.css";
