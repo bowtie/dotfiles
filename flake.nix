@@ -64,7 +64,6 @@
       inherit pkgs;
       extraSpecialArgs = {inherit inputs username pkgs;};
       modules = [
-        nur.hmModules.nur
         ./home/home.nix
       ];
     };

@@ -1,6 +1,7 @@
 ## 🗒 Todo
 - [x] plasma-session
-- [ ] better firefox
+- [x] better firefox
+- [ ] nur
 - [ ] power-profiles.js
 - [ ] server config
 - [ ] neovim / helix
