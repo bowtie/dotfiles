@@ -16,7 +16,7 @@
 - [ ] home profiles
 - [ ] theme
 - [ ] agenix
-- [ ] electron wl fix
+- [x] electron wl fix
 - [ ] [#258524](https://github.com/NixOS/nixpkgs/issues/258524)
 - [x] fix wifi powersave ~~while plugged~~
 - [ ] move auto-cpufreq to nixpkgs.service when updated to v2
