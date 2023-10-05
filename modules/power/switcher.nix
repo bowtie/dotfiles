@@ -24,7 +24,7 @@ let
 in {
   services.udev.extraRules = ''
     # start/stop services on power (un)plug
-    SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="1", RUN+="${plugged}"
-    SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="0", RUN+="${unplugged}"
+    SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="${plugged}"
+    SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="${unplugged}"
   '';
 }

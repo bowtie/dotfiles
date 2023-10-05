@@ -1,7 +1,8 @@
 {lib, ...}: {
   # Disable management of DNS via NetworkManager and override the default DNS to be localhost so that we can use the Encrypted DNS service networking = {
   networking = {
-    nameservers = ["::1"];
+    nameservers = ["127.0.0.1" "::1"];
+    dhcpcd.extraConfig = "nohook resolv.conf";
     networkmanager.dns = "none";
   };
 
@@ -17,7 +18,7 @@
         ipv6_servers = false;
         require_dnssec = true;
         require_nolog = true;
-        listen_addresses = ["[::1]:51"];
+        listen_addresses = ["127.0.0.1:54" "[::1]:54"];
 
         sources.public-resolvers = {
           urls = [
@@ -32,16 +33,6 @@
       };
     };
   };
-
-  # Forward loopback traffic on port 53 to dnscrypt-proxy2.
-  networking.firewall.extraCommands = ''
-    ip6tables --table nat --flush OUTPUT
-    ${lib.flip (lib.concatMapStringsSep "\n") ["udp" "tcp"] (proto: ''
-      ip6tables --table nat --append OUTPUT \
-        --protocol ${proto} --destination ::1 --destination-port 53 \
-        --jump REDIRECT --to-ports 51
-    '')}
-  '';
 
   systemd.services.dnscrypt-proxy2.serviceConfig = {
     StateDirectory = "dnscrypt-proxy";

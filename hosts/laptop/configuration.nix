@@ -6,13 +6,13 @@
 }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-gpu-amd
+    inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-laptop-ssd
     inputs.hardware.nixosModules.common-hidpi
 
     /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
-    ../../modules/session/gnome.nix
+    # ../../modules/session/gnome.nix
     ../../modules/session/hyprland.nix
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
@@ -45,10 +45,12 @@
     wget
     pulseaudio
     nerdfonts
+    powertop
+    zenstates
   ];
 
   # use Wayland where possible (electron)
-  environment.variables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.shells = with pkgs; [fish];
 
@@ -56,9 +58,14 @@
     xserver.enable = true;
     xserver.excludePackages = [pkgs.xterm];
     flatpak.enable = true;
+    # most likely useless since will use placeholder driver, Zen 1 has no p_state
+    # might also conflict with auto-cpufreq
     power-profiles-daemon.enable = false;
     logind.lidSwitchExternalPower = "ignore";
   };
+
+  # enables powertop?
+  powerManagement.powertop.enable = true;
 
   # KDE Connect
   networking.firewall = rec {
