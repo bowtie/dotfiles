@@ -21,6 +21,8 @@
       "FantasqueSansMono"
       "FiraCode"
       "Mononoki"
+      "Iosevka"
+      "JetBrainsMono"
     ];
   };
 
