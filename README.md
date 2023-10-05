@@ -5,6 +5,7 @@
 - [ ] bento startpage
 - [x] ags tokyo-night
 - [ ] power-profiles.js
+- [ ] weather.js
 - [x] server config
 - [ ] -- docker w/ portainer
 - [ ] -- uptime kuma
