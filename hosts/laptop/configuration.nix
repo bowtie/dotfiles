@@ -6,7 +6,7 @@
 }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.common-gpu-amd
+    # inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-laptop-ssd
     inputs.hardware.nixosModules.common-hidpi
 
@@ -80,6 +80,7 @@
   networking = {
     hostName = "swift";
     networkmanager.enable = true;
+    networkmanager.wifi.powersave = false;
   };
 
   services.openssh = {

@@ -52,6 +52,7 @@
         ./hosts/desktop/configuration.nix
       ];
     };
+
     nixosConfigurations."swift" = nixos.lib.nixosSystem {
       specialArgs = {inherit inputs username system;};
       modules = [
