@@ -6,28 +6,20 @@
   ...
 }: {
   imports = [
-    inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.common-cpu-amd-pstate
+    inputs.hardware.nixosModules.common-cpu-intel
+    inputs.hardware.nixosModules.common-gpu-intel
     inputs.hardware.nixosModules.common-pc
     inputs.hardware.nixosModules.common-pc-ssd
 
     /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
-    ../../modules/session/kde.nix
-    ../../modules/session/hyprland.nix
-    ../../modules/graphics/nvidia.nix
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
-    ../../modules/sound/sound.nix
+    ../../modules/dns/adguard.nix
+    ../../modules/dns/dnscrypt.nix
   ];
 
-  virtualisation = {
-    podman.enable = true;
-    libvirtd.enable = true;
-  };
-
   programs = {
-    dconf.enable = true;
     fish.enable = true;
   };
 
@@ -45,17 +37,6 @@
     flatpak.enable = true;
   };
 
-  # KDE Connect
-  networking.firewall = rec {
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
-  };
-
   users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.fish;
@@ -63,7 +44,7 @@
   };
 
   networking = {
-    hostName = "miya";
+    hostName = "kana";
     networkmanager.enable = true;
   };
 

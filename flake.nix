@@ -61,6 +61,13 @@
       ];
     };
 
+    nixosConfigurations."kana" = nixos.lib.nixosSystem {
+      specialArgs = {inherit inputs username system;};
+      modules = [
+        ./hosts/server/configuration.nix
+      ];
+    };
+
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit inputs username pkgs;};
