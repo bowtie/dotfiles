@@ -44,7 +44,6 @@
     git
     wget
     pulseaudio
-    nerdfonts
     powertop
     zenstates
   ];

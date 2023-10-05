@@ -3,7 +3,7 @@ export default {
     preferredMpris: 'spotify',
 
     // number of workspaces shown on panel and overview
-    workspaces: 7,
+    workspaces: 5,
 
     //
     dockItemSize: 56,
