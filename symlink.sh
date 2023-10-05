@@ -11,10 +11,10 @@ remove() {
 }
 
 symlink() {
-	ln -s ~/Projects/dotfiles/ags ~/.config/ags
-	ln -s ~/Projects/dotfiles/nvim ~/.config/nvim
-	ln -s ~/Projects/dotfiles/wezterm ~/.config/wezterm
-	ln -s ~/Projects/dotfiles/hypr ~/.config/hypr/config
+	ln -s ~/Projects/dotfiles/config/ags ~/.config/ags
+	ln -s ~/Projects/dotfiles/config/nvim ~/.config/nvim
+	ln -s ~/Projects/dotfiles/config/wezterm ~/.config/wezterm
+	ln -s ~/Projects/dotfiles/config/hypr ~/.config/hypr/config
 }
 
 remove
