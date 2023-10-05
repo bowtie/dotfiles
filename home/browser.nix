@@ -36,6 +36,7 @@ in {
     profiles.default = {
       name = "Default";
       settings = {
+        "layout.css.devPixelsPerPx" = "1.25"; # when hi-dpi workstation
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
         # "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         # "browser.tabs.drawInTitlebar" = true;
