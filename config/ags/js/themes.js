@@ -27,6 +27,16 @@ const charm = {
     orange: '#E79E64',
 };
 
+const tokyo = {
+    red: '#f7768e',
+    green: '#9ece6a',
+    yellow: '#e0af68',
+    blue: '#7aa2f7',
+    magenta: '#bb9af7',
+    teal: '#7dcfff',
+    orange: '#ff9e64',
+};
+
 const dark = {
     color_scheme: 'dark',
     bg_color: '#171717',
@@ -41,6 +51,14 @@ const light = {
     fg_color: '#141414',
     hover_fg: '#0a0a0a',
     ...editScheme(gnome, c => `darken(${c}, 8%)`),
+};
+
+const night = {
+    color_scheme: 'night',
+    bg_color: '#1a1b26',
+    fg_color: '#a9b1d6',
+    hover_fg: '#c0caf5',
+    ...tokyo,
 };
 
 const misc = {
@@ -176,6 +194,18 @@ const cherry = {
     bg_color: 'transparentize(#171717, 0.3)',
 };
 
+const tokyo_night = {
+    wallpaper: WP + 'MarketGarden.png',
+    name: 'tokyo_night',
+    icon: '🗼',
+    ...night,
+    ...misc,
+    ...colors,
+    accent: '$blue',
+    accent_fg: '#16161e',
+    active_gradient: 'to left, $accent, darken($accent, 6%)',
+};
+
 export default [
     kitty_dark,
     kitty_light,
@@ -184,4 +214,5 @@ export default [
     ivory,
     cutefish,
     cherry,
+    tokyo_night,
 ];
