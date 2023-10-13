@@ -44,7 +44,7 @@ export default () => PanelButton({
                 ['org.wezfurlong.wezterm', 'folder-code'],
                 ['com.raggesilver.BlackBox', 'folder-code'],
                 ['kitty', 'folder-code'],
-                ['codium-url-handler', 'vscode']
+                ['codium-url-handler', 'vscode'],
                 ['Caprine', 'facebook-messenger'],
                 ['', 'preferences-desktop-display'],
             ]),
@@ -60,7 +60,7 @@ export default () => PanelButton({
                 ['com.raggesilver.BlackBox', 'BlackBox'],
                 ['firefox', 'Firefox'],
                 ['kitty', 'Kitty'],
-                ['codium-url-handler', 'VSCodium']
+                ['codium-url-handler', 'VSCodium'],
                 ['org.gnome.Nautilus', 'Files'],
                 ['libreoffice-writer', 'Writer'],
                 ['', 'Desktop'],
