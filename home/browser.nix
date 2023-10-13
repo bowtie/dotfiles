@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   betterfox =
     pkgs.fetchurl
     {
@@ -22,17 +26,27 @@ in {
   programs.firefox = {
     enable = true;
     # Install extensions from NUR
-    #profiles.default.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-    #  ublock-origin
-    #  sponsorblock
-    #  darkreader
-    #  keepassxc-browser
-    #  privacy-pass
-    #  auto-tab-discard
-    #  skip-redirect
-    #  bypass-paywalls-clean
-    #  behave
-    #];
+    profiles.default.extensions = with config.nur.repos.rycee.firefox-addons; [
+      ublock-origin
+      sponsorblock
+      darkreader
+      keepassxc-browser
+      privacy-pass
+      auto-tab-discard
+      skip-redirect
+      bypass-paywalls-clean
+      behave
+    ];
+    package = pkgs.firefox.override {
+      extraPolicies."3rdparty".Extensions = {
+        "uBlock0@raymondhill.net" = {
+          # uBlock settings are written in JSON to be more compatible with the
+          # backup format. This checks the syntax.
+          adminSettings =
+            builtins.fromJSON (builtins.readFile ./firefox/ublock-settings.json);
+        };
+      };
+    };
     profiles.default = {
       name = "Default";
       settings = {

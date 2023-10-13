@@ -75,6 +75,7 @@
       inherit pkgs;
       extraSpecialArgs = {inherit inputs username pkgs;};
       modules = [
+        nur.nixosModules.nur
         ./home/home.nix
       ];
     };

@@ -1,0 +1,45 @@
+{
+    "userSettings": {
+        "externalLists": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt\nhttps://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/personal.txt\nhttps://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt\nhttps://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/youtube_clear_view.txt",
+        "importedLists": [
+            "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
+            "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/personal.txt",
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt",
+            "https://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt",
+            "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt",
+            "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt",
+            "https://raw.githubusercontent.com/yokoffing/filterlists/main/youtube_clear_view.txt"
+        ]
+    },
+    "selectedFilterLists": [
+        "user-filters",
+        "ublock-filters",
+        "ublock-badware",
+        "ublock-privacy",
+        "ublock-quick-fixes",
+        "ublock-unbreak",
+        "easylist",
+        "block-lan",
+        "easyprivacy",
+        "urlhaus-1",
+        "plowe-0",
+        "adguard-popup-overlays",
+        "easylist-chat",
+        "easylist-newsletters",
+        "easylist-notifications",
+        "easylist-annoyances",
+        "fanboy-social",
+        "fanboy-cookiemonster",
+        "ublock-cookies-easylist",
+        "ublock-annoyances",
+        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/personal.txt",
+        "https://raw.githubusercontent.com/yokoffing/filterlists/main/privacy_essentials.txt",
+        "https://raw.githubusercontent.com/stephenhawk8054/PrivacyExtended/main/privacy_extended.txt",
+        "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
+        "https://raw.githubusercontent.com/yokoffing/filterlists/main/annoyance_list.txt",
+        "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt",
+        "https://raw.githubusercontent.com/yokoffing/filterlists/main/youtube_clear_view.txt",
+        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-ublock.txt"
+    ]
+}
