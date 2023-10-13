@@ -45,7 +45,7 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     package = hyprland;
-    systemd.enable = true;
+    systemdIntegration = true;
     # enableNvidiaPatches = true;
     xwayland.enable = true;
     extraConfig = ''

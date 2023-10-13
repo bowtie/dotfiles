@@ -132,20 +132,16 @@
         "url": "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example"
       }
     },
-    "nixos": {
+    "more-waita": {
+      "flake": false,
       "locked": {
-        "lastModified": 1696193975,
-        "narHash": "sha256-mnQjUcYgp9Guu3RNVAB2Srr1TqKcPpRXmJf4LJk6KRY=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "fdd898f8f79e8d2f99ed2ab6b3751811ef683242",
-        "type": "github"
+        "narHash": "sha256-P22RnT+eFVIIphx6TmSmDWeyovNaoyu5yuoEMJjKGvg=",
+        "type": "tarball",
+        "url": "https://github.com/somepaulo/MoreWaita/archive/refs/heads/main.zip"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://github.com/somepaulo/MoreWaita/archive/refs/heads/main.zip"
       }
     },
     "nixpkgs": {
@@ -219,7 +215,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "lf-icons": "lf-icons",
-        "nixos": "nixos",
+        "more-waita": "more-waita",
         "nixpkgs": "nixpkgs_3",
         "nur": "nur"
       }
