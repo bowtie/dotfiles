@@ -1,7 +1,7 @@
 ## 🗒 Todo
 - [x] plasma-session
 - [x] better firefox
-- [ ] nur
+- [x] nur
 - [ ] bento startpage
 - [x] ags tokyo-night
 - [ ] power-profiles.js
@@ -27,3 +27,4 @@
 - [ ] research acpi table poorly written by acer [[1]](https://github.com/DavidS95/Smokeless_UMAF) [[2]](https://github.com/lbschenkel/acer-sf314_43-acpi-fix)
 - [ ] write zenstates script to disable C6 at start
 - [ ] research AMD CBS *(outdated?)*
+
