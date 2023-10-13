@@ -16,7 +16,7 @@
     ../../modules/session/hyprland.nix
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
-    ../../modules/sound/sound.nix
+    ../../modules/sound/audio.nix
     ../../modules/dns/adguard.nix
     ../../modules/dns/dnscrypt.nix
     ../../modules/power/switcher.nix
@@ -80,7 +80,7 @@
   users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "audio"];
   };
 
   networking = {

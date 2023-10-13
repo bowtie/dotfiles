@@ -45,7 +45,7 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     package = hyprland;
-    systemdIntegration = true;
+    systemd.enable = true;
     # enableNvidiaPatches = true;
     xwayland.enable = true;
     extraConfig = ''
@@ -54,10 +54,7 @@ in {
       source=~/.config/hypr/config/rules.conf
       source=~/.config/hypr/config/binds.conf
       source=~/.config/hypr/config/theme.conf
-
-      # exec-once = /usr/libexec/polkit-gnome-authentication-agent-1
-      exec-once = ags -b hypr
-      exec-once = hyprctl setcursor Qogir 24
+      source=~/.config/hypr/config/exec.conf
     '';
   };
 }

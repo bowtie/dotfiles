@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
@@ -25,12 +24,16 @@
       url = "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example";
       flake = false;
     };
+
+    more-waita = {
+      url = "https://github.com/somepaulo/MoreWaita/archive/refs/heads/main.zip";
+      flake = false;
+    };
   };
 
   outputs = {
-    nixos,
-    home-manager,
     nixpkgs,
+    home-manager,
     nur,
     auto-cpufreq,
     hardware,
@@ -46,14 +49,14 @@
       config.allowUnfree = true;
     };
   in {
-    nixosConfigurations."miya" = nixos.lib.nixosSystem {
+    nixosConfigurations."miya" = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs username system;};
       modules = [
         ./hosts/desktop/configuration.nix
       ];
     };
 
-    nixosConfigurations."swift" = nixos.lib.nixosSystem {
+    nixosConfigurations."swift" = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs username system;};
       modules = [
         ./hosts/laptop/configuration.nix
@@ -61,7 +64,7 @@
       ];
     };
 
-    nixosConfigurations."kana" = nixos.lib.nixosSystem {
+    nixosConfigurations."kana" = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs username system;};
       modules = [
         ./hosts/server/configuration.nix

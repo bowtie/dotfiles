@@ -1,15 +1,14 @@
-{pkgs, ...}: let
-  moreWaitaVersion = "45";
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   moreWaita = pkgs.stdenv.mkDerivation {
-    name = "MoreWaita-${moreWaitaVersion}";
-    src = pkgs.fetchurl {
-      url = "https://github.com/somepaulo/MoreWaita/archive/refs/tags/v${moreWaitaVersion}.zip";
-      sha256 = "sha256-j4Nc+4swwhsjj7fhliO0j1xX91FGQS+OASGbpNHW8XI=";
-    };
-    dontUnpack = true;
+    name = "MoreWaita";
+    src = inputs.more-waita;
     installPhase = ''
-      mkdir -p $out
-      ${pkgs.unzip}/bin/unzip $src -d $out
+      mkdir -p $out/share/icons
+      mv * $out/share/icons
     '';
   };
 
@@ -61,8 +60,8 @@ in {
             }
           '';
         };
-        ".local/share/icons/MoreWaita-${moreWaitaVersion}" = {
-          source = "${moreWaita}/MoreWaita-${moreWaitaVersion}";
+        ".local/share/icons/MoreWaita" = {
+          source = "${moreWaita}/share/icons";
         };
       }
       // theme "icon" "papirus-icon-theme" "Papirus"
@@ -81,7 +80,7 @@ in {
       name = cursor-theme;
       package = cursor-package;
     };
-    iconTheme.name = "MoreWaita-${moreWaitaVersion}";
+    iconTheme.name = "MoreWaita";
     gtk3.extraCss = ''
       headerbar, .titlebar,
       .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
