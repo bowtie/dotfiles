@@ -1,10 +1,10 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.lf = {
     enable = true;
-
-    extraConfig = ''
-      $mkdir -p ~/.trash
-    '';
 
     commands = let
       trash = ''        ''${{
@@ -40,7 +40,7 @@
                 fi
               }}'';
 
-      extract = ''        ''${{
+      unzip = ''        ''${{
                 set -f
                 case $f in
                     *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
@@ -67,12 +67,15 @@
       on-select = ''        &{{
                 lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f")\""
               }}'';
+
+      q = "quit";
     };
 
     keybindings = {
       a = "push %mkdir<space>";
       t = "push %touch<space>";
       r = "push :rename<space>";
+      x = "trash";
       "." = "set hidden!";
       "<delete>" = "trash";
       "<enter>" = "open";
@@ -85,7 +88,21 @@
       preview = true;
       drawbox = true;
       icons = true;
+      cursorpreviewfmt = "";
     };
+
+    previewer = {
+      keybinding = "i";
+      source = "${pkgs.ctpv}/bin/ctpv";
+    };
+
+    extraConfig = ''
+      $mkdir -p ~/.trash
+
+      &${pkgs.ctpv}/bin/ctpv -s $id
+      cmd on-quit %${pkgs.ctpv}/bin/ctpv -e $id
+      set cleaner ${pkgs.ctpv}/bin/ctpvclear
+    '';
   };
 
   xdg.configFile."lf/icons".source = inputs.lf-icons;

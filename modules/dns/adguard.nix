@@ -27,6 +27,14 @@
             bootstrap_dns = ["9.9.9.10" "149.112.112.10" "2620:fe::10" "2620:fe::fe:10"];
             resolve_clients = true;
             statistics.interval = "24h";
+            filters = [
+              {
+                enabled = true;
+                id = 1;
+                name = "No Googlies";
+                url = "https://raw.githubusercontent.com/nickspaargaren/no-google/master/pihole-google.txt";
+              }
+            ];
           };
         };
         extraArgs = [
