@@ -8,10 +8,9 @@ const pinned = [
     'org.wezfurlong.wezterm',
     'org.gnome.Nautilus',
     'org.gnome.Calendar',
-    'obsidian',
-    'transmission-gtk',
-    'caprine',
-    'teams-for-linux',
+    'vscodium',
+    'signal-desktop',
+    'github-desktop',
     'discord',
     'spotify',
     'com.usebottles.bottles',
@@ -22,14 +21,14 @@ const AppButton = ({ icon, ...rest }) => Widget.Button({
     ...rest,
     child: Widget.Box({
         className: 'box',
-        children: [Widget.Overlay({
+        child: Widget.Overlay({
             child: Widget.Icon({ icon, size: options.dockItemSize }),
             overlays: [Widget.Box({
                 className: 'indicator',
                 valign: 'end',
                 halign: 'center',
             })],
-        })],
+        }),
     }),
 });
 

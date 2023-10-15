@@ -25,7 +25,6 @@
   };
 
   environment.systemPackages = with pkgs.gnome; [
-    pkgs.glib
     adwaita-icon-theme
     nautilus
     gnome-calendar

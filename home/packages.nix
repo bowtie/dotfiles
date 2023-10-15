@@ -19,6 +19,10 @@
     d-spy
     easyeffects
     # discord
+    (discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
     github-desktop
     # bottles
     icon-library
@@ -28,6 +32,7 @@
     dconf-editor
 
     # tools
+    adguardian
     bat
     eza
     ranger
@@ -43,6 +48,7 @@
     killall
     zip
     unzip
+    glib
 
     # hyprland
     wl-gammactl
