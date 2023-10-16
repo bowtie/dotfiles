@@ -2,7 +2,7 @@
 - [x] plasma-session
 - [x] better firefox
 - [x] nur
-- [ ] bento startpage
+- [x] ~~not~~ bento startpage
 - [x] ags tokyo-night
 - [ ] power-profiles.js
 - [ ] weather.js
