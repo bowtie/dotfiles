@@ -195,7 +195,7 @@ const cherry = {
 };
 
 const tokyo_night = {
-    wallpaper: WP + 'MarketGarden.png',
+    wallpaper: WP + 'market-garden.png',
     name: 'tokyo_night',
     icon: '🗼',
     ...night,
