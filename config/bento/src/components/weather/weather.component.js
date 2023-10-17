@@ -29,7 +29,7 @@ class Weather extends Component {
   ];
 
   location;
-
+  
   constructor() {
     super();
 
@@ -43,8 +43,10 @@ class Weather extends Component {
 
   setDependencies() {
     this.location = CONFIG.temperature.location;
+    this.lat = CONFIG.temperature.lat;
+    this.lon = CONFIG.temperature.lon;
     this.temperatureScale = CONFIG.temperature.scale;
-    this.weatherForecast = new WeatherForecastClient(this.location);
+    this.weatherForecast = new WeatherForecastClient(this.lat, this.lon);
   }
 
   imports() {

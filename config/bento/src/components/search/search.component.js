@@ -21,7 +21,7 @@ class Search extends Component {
           justify-content: center;
           width: calc(100% - 2px);
           height: 100%;
-          background: rgb(24 24 29 / 80%);
+          background: rgb(26 27 38 / 80%);
           z-index: 99;
           visibility: hidden;
           top: -100%;
@@ -124,7 +124,7 @@ class Search extends Component {
 
   loadEngines() {
     for (var key in this.engines)
-      this.refs.engines.innerHTML += `<li><p title="${this.engines[key][1]}">!${key}</p></li>`;
+      this.refs.engines.innerHTML += `<li><p title="${this.engines[key][1]}">@${key}</p></li>`;
   }
 
   activate() {
@@ -142,7 +142,7 @@ class Search extends Component {
 
     let args = target.value.split(' ');
     let prefix = args[0];
-    let defaultEngine = this.engines['g'][0];
+    let defaultEngine = this.engines['d'][0];
     let engine = defaultEngine;
 
     this.refs.engines.childNodes.forEach(engine => {
@@ -153,7 +153,7 @@ class Search extends Component {
     });
 
     if (key === 'Enter') {
-      if (prefix.indexOf('!') === 0) {
+      if (prefix.indexOf('@') === 0) {
         engine = this.engines[prefix.substr(1)][0];
         args = args.slice(1);
       }

@@ -16,7 +16,7 @@
 - [ ] neovim / helix
 - [ ] home profiles
 - [ ] theme
-- [ ] agenix
+- [ ] agenix / sops
 - [x] electron wl fix
 - [ ] [#258524](https://github.com/NixOS/nixpkgs/issues/258524)
 - [x] fix wifi powersave ~~while plugged~~
