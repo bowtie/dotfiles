@@ -3,7 +3,9 @@ let saved_config = JSON.parse(localStorage.getItem("CONFIG"));
 const default_config = {
   overrideStorage: true,
   temperature: {
-    location: 'Figueira da Foz, Coimbra',
+    location: "Coimbra",
+    lat: "40.1508",
+    lon: "-8.8618",
     scale: "C",
   },
   clock: {
@@ -12,16 +14,20 @@ const default_config = {
   },
   search: {
     engines: {
-      g: ["https://google.com/search?q=", "Google"],
-      d: ["https://duckduckgo.com/html?q=", "DuckDuckGo"],
-      y: ["https://youtube.com/results?search_query=", "Youtube"],
-      r: ["https://www.reddit.com/search/?q=", "Reddit"],
-      p: ["https://www.pinterest.es/search/pins/?q=", "Pinterest"],
+      b: ["https://search.brave.com/search?q=", "Brave"],
+      d: ["https://duckduckgo.com/?q=", "DuckDuckGo"],
+      sp: ["https://startpage.com/sp/search?query=", "Startpage"],
+      q: ["https://qwant.com/?q=", "Qwant"],
+      r: ["https://reddit.com/search/?q=", "Reddit"],
+      p: ["https://pinterest.es/search/pins/?q=", "Pinterest"],
+      qm: ["https://qwant.com/maps/?q=", "Qwant Maps"],
+      gh: ["https://github.com/search?q=", "GitHub"],
+      yt: ["https://youtube.com/results?search_query=", "Youtube"],
     },
   },
   keybindings: {
     "s": "search-bar",
-    "q": "config-tab",
+    // "q": "config-tab",
   },
   disabled: [],
   localIcons: false,
@@ -42,19 +48,19 @@ const default_config = {
           },
           {
             name: "reddit",
-            url: "https://www.reddit.com/",
+            url: "https://reddit.com/",
             icon: "brand-reddit",
             icon_color: "#ff9e64",
           },
           {
             name: "youtube",
-            url: "https://www.youtube.com/",
+            url: "https://youtube.com/",
             icon: "brand-youtube-filled",
             icon_color: "#f7768e",
           },
           {
             name: "twitch",
-            url: "https://www.twitch.tv/",
+            url: "https://twitch.tv/",
             icon: "brand-twitch",
             icon_color: "#bb9af7",
           },
@@ -63,8 +69,14 @@ const default_config = {
         name: "Games",
         links: [
           {
+            name: "aimbooster",
+            url: "https:///aimbooster.com/",
+            icon: "target",
+            icon_color: "#ff9e64",
+          },
+          {
             name: "chess",
-            url: "https://www.chess.com/home",
+            url: "https://chess.com/home",
             icon: "chess-queen-filled",
             icon_color: "#9ece6a",
           },
@@ -86,13 +98,13 @@ const default_config = {
         links: [
           {
             name: "viki",
-            url: "https://www.viki.com",
+            url: "https://viki.com",
             icon: "brand-bilibili",
             icon_color: "#7aa2f7",
           },
           {
             name: "primevideo",
-            url: "https://www.primevideo.com/region/eu/",
+            url: "https://primevideo.com/region/eu/",
             icon: "brand-amazon",
             icon_color: "#7dcfff",
           },
@@ -108,19 +120,19 @@ const default_config = {
           links: [
             {
               name: "pinterest",
-              url: "https://www.pinterest.es/",
+              url: "https://pinterest.es/",
               icon: "brand-pinterest",
               icon_color: "#f7768e",
             },
             {
               name: "artstation",
-              url: "https://www.artstation.com/?sort_by=community",
+              url: "https://artstation.com/?sort_by=community",
               icon: "chart-area",
               icon_color: "#7dcfff",
             },
             {
               name: "deviantart",
-              url: "https://www.deviantart.com/",
+              url: "https://deviantart.com/",
               icon: "brand-deviantart",
               icon_color: "#9ece6a",
             },
@@ -136,10 +148,16 @@ const default_config = {
           name: "resources",
           links: [
             {
+              name: "speckyboy",
+              url: "https://speckyboy.com/",
+              icon: "eyeglass",
+              icon_color: "#7aa2f7",
+            },
+            {
               name: "colorhunt",
               url: "https://colorhunt.co/",
               icon: "color-picker",
-              icon_color: "#f7768e",
+              icon_color: "#bb9af7",
             },
             {
               name: "terminalsexy",
@@ -177,7 +195,7 @@ const default_config = {
           links: [
             {
               name: "phind",
-              url: "https://www.phind.com/",
+              url: "https://phind.com/",
               icon: "brand-openai",
               icon_color: "#7dcfff",
             },
@@ -218,7 +236,7 @@ const default_config = {
             },
             {
               name: "hackerrank",
-              url: "https://www.hackerrank.com/dashboard",
+              url: "https://hackerrank.com/dashboard",
               icon: "code-asterix",
               icon_color: "#9ece6a",
             },
@@ -235,7 +253,7 @@ const default_config = {
           links: [
             {
               name: "gmail",
-              url: "https://mail.google.com/mail/u/0/",
+              url: "https://mail.google.com/",
               icon: "brand-gmail",
               icon_color: "#f7768e",
             },
@@ -249,7 +267,7 @@ const default_config = {
               name: "tutanota",
               url: "https://mail.tutanota.com/",
               icon: "mailbox",
-              icon_color: "#73daca",
+              icon_color: "#7dcfff",
             },
           ],
         },
@@ -258,15 +276,32 @@ const default_config = {
           links: [
             {
               name: "drive",
-              url: "https://drive.google.com/drive/u/0/my-drive",
+              url: "https://drive.google.com/",
               icon: "brand-google-drive",
               icon_color: "#e0af68",
             },
             {
               name: "proton",
               url: "https://drive.proton.me/",
-              icon: "folder",
+              icon: "folders",
               icon_color: "#bb9af7",
+            },
+          ],
+        },
+        {
+          name: "misc",
+          links: [
+            {
+              name: "calendar",
+              url: "https://mail.tutanota.com/calendar/",
+              icon: "calendar",
+              icon_color: "#7dcfff",
+            },
+            {
+              name: "notesnook",
+              url: "https://app.notesnook.com/",
+              icon: "notes",
+              icon_color: "#9ece6a",
             },
           ],
         },
@@ -277,48 +312,128 @@ const default_config = {
       background_url: "src/img/banners/bakery.webp",
       categories: [
         {
-          name: 'fun',
-        links: [
-          {
-            name: '/out/',
-            url: 'https://4chan.org/out/',
-            icon: 'leaf',
-            icon_color: '#9ece6a'
-          },
-          {
-            name: '/lit/',
-            url: 'https://4chan.org/lit/',
-            icon: 'book',
-            icon_color: '#e0af68'
-          },
-          {
-            name: '/v/',
-            url: 'https://4chan.org/v/',
-            icon: 'device-gamepad',
-            icon_color: '#f7768e'
-          },
-          {
-            name: '/p/',
-            url: 'https://4chan.org/p/',
-            icon: 'camera',
-            icon_color: '#7aa2f7'
-          }
-        ]
-      }, {
-        name: 'music services',
-        links: [
-          {
-            url: 'https://soundcloud.com/',
-            icon: 'brand-soundcloud',
-            icon_color: '#ff9e64'
-          },
-          {
-            url: 'https://listen.moe/',
-            icon: 'radio',
-            icon_color: '#7dcfff'
-          },
-        ]
-      },
+          name: "news",
+          links: [
+            {
+              url: "https://dualshockers.com/",
+              icon: "progress-bolt",
+              icon_color: "#7dcfff"
+            },
+            {
+              url: "https://news.itsfoss.com/",
+              icon: "brand-open-source",
+              icon_color: "#9ece6a"
+            },
+            {
+              url: "https://resetera.com/forums/gaming-forum.7/",
+              icon: "triangles",
+              icon_color: "#bb9af7"
+            },
+            {
+              url: "https://eurogamer.net/",
+              icon: "world",
+              icon_color: "#7dcfff"
+            },
+            {
+              url: "https://gameinformer.com/",
+              icon: "brand-gatsby",
+              icon_color: "#7aa2f7"
+            },
+            {
+              url: "https://gamesradar.com/uk/",
+              icon: "code-plus",
+              icon_color: "#ff9e64"
+            },
+            {
+              url: "https://guru3d.com/",
+              icon: "cpu",
+              icon_color: "#7aa2f7"
+            },
+            {
+              url: "https://pcgamer.com/uk/",
+              icon: "devices-pc",
+              icon_color: "#f7768e"
+            },
+            {
+              url: "https://phoronix.com/",
+              icon: "brand-picsart",
+              icon_color: "#9ece6a"
+            },
+            {
+              url: "https://polygon.com/",
+              icon: "lasso-polygon",
+              icon_color: "#bb9af7"
+            },
+            {
+              url: "https://techpowerup.com/",
+              icon: "power",
+              icon_color: "#f7768e"
+            },
+            {
+              url: "https://news.ycombinator.com/",
+              icon: "brand-ycombinator",
+              icon_color: "#ff9e64"
+            },
+          ]
+        }, {
+          name: "fun",
+          links: [
+            {
+              name: "/out/",
+              url: "https://4chan.org/out/",
+              icon: "leaf",
+              icon_color: "#9ece6a"
+            },
+            {
+              name: "/lit/",
+              url: "https://4chan.org/lit/",
+              icon: "book",
+              icon_color: "#e0af68"
+            },
+            {
+              name: "/v/",
+              url: "https://4chan.org/v/",
+              icon: "device-gamepad",
+              icon_color: "#bb9af7"
+            },
+            {
+              name: "/vp/",
+              url: "https://4chan.org/vp/",
+              icon: "pokeball",
+              icon_color: "#f7768e"
+            },
+            {
+              name: "/p/",
+              url: "https://4chan.org/p/",
+              icon: "camera",
+              icon_color: "#7aa2f7"
+            }
+          ]
+        }, {
+          name: "music services",
+          links: [
+            {
+              url: "https://soundcloud.com/",
+              icon: "brand-soundcloud",
+              icon_color: "#ff9e64"
+            },
+            {
+              url: "https://listen.moe/",
+              icon: "radio",
+              icon_color: "#7dcfff"
+            },
+            {
+              url: "https://musicforprogramming.net/",
+              icon: "music-code",
+              icon_color: "#bb9af7"
+            },
+            {
+              url: "https://r-a-d.io/",
+              icon: "droplet",
+              icon_color: "#f7768e"
+            },
+          ]
+        },
       ],
     },
     {
@@ -337,14 +452,56 @@ const default_config = {
             {
               name: "plex",
               url: "#",
-              icon: "video",
+              icon: "device-tv-old",
               icon_color: "#ff9e64",
             },
             {
               name: "uptime kuma",
               url: "#",
-              icon: "clock",
+              icon: "server-bolt",
               icon_color: "#9ece6a",
+            },
+          ],
+        },
+        {
+          name: "homelab",
+          links: [
+            {
+              name: "home assistant",
+              url: "#",
+              icon: "home",
+              icon_color: "#7dcfff",
+            },
+            {
+              name: "vault",
+              url: "#",
+              icon: "shield-lock",
+              icon_color: "#7aa2f7",
+            },
+            {
+              name: "mealie",
+              url: "#",
+              icon: "baguette",
+              icon_color: "#e0af68",
+            },
+            {
+              name: "immich",
+              url: "#",
+              icon: "flower",
+              icon_color: "#bb9af7",
+            },
+          ],
+        },
+        {
+          name: "resources",
+          links: [
+            {
+              name: "r/homelab",
+              url: "https://reddit.com/r/homelab/",
+            },
+            {
+              name: "r/selfhosted",
+              url: "https://reddit.com/r/selfhosted/",
             },
           ],
         },
@@ -356,7 +513,7 @@ const default_config = {
 const CONFIG = new Config(saved_config ?? default_config);
 // const CONFIG = new Config(default_config);
 
-(function() {
+(function () {
   var css = document.createElement('link');
   css.href = 'src/css/tabler-icons.min.css';
   css.rel = 'stylesheet';

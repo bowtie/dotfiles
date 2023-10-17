@@ -1,7 +1,7 @@
 class WeatherForecastClient {
-  constructor(location) {
+  constructor(lat,lon) {
     this.appId = 'a0be14517b93f71540553d16232f1822';
-    this.url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(location)}&units=metric&appid=${this.appId}`;
+    this.url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.appId}`;
   }
 
   async getWeather() {
