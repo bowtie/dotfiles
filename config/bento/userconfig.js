@@ -163,7 +163,36 @@ const default_config = {
               name: "terminalsexy",
               url: "https://terminal.sexy",
               icon: "prompt",
+              icon_color: "#e0af68",
+            },
+            {
+              name: "tips",
+              url: "https://tips.clip-studio.com/",
+              icon: "paperclip",
+              icon_color: "#7dcfff",
+            },
+          ],
+        },
+        {
+          name: "modelling",
+          links: [
+            {
+              name: "blender",
+              url: "https://blender.org",
+              icon: "brand-blender",
               icon_color: "#ff9e64",
+            },
+            {
+              name: "cookie",
+              url: "https://cgcookie.com/",
+              icon: "cookie",
+              icon_color: "#e0af68",
+            },
+            {
+              name: "guru",
+              url: "https://blenderguru.com/",
+              icon: "chart-donut",
+              icon_color: "#bb9af7",
             },
           ],
         },
@@ -456,10 +485,16 @@ const default_config = {
               icon_color: "#ff9e64",
             },
             {
-              name: "uptime kuma",
+              name: "kuma",
               url: "#",
               icon: "server-bolt",
               icon_color: "#9ece6a",
+            },
+            {
+              name: "adguard",
+              url: "#",
+              icon: "hand-stop",
+              icon_color: "#f7768e",
             },
           ],
         },
@@ -467,7 +502,7 @@ const default_config = {
           name: "homelab",
           links: [
             {
-              name: "home assistant",
+              name: "assistant",
               url: "#",
               icon: "home",
               icon_color: "#7dcfff",
