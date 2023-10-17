@@ -30,7 +30,7 @@ const default_config = {
   tabs: [
     {
       name: "chi ll",
-      background_url: "src/img/banners/cozy-sh.gif",
+      background_url: "src/img/banners/cozy.webp",
       categories: [{
         name: "Social Media",
         links: [
@@ -101,7 +101,7 @@ const default_config = {
     },
     {
       name: "design",
-      background_url: "src/img/banners/drawing-sh.gif",
+      background_url: "src/img/banners/drawing.webp",
       categories: [
         {
           name: "inspiration",
@@ -119,15 +119,15 @@ const default_config = {
               icon_color: "#7dcfff",
             },
             {
-              name: "dribble",
-              url: "https://dribbble.com/following",
-              icon: "brand-dribbble-filled",
-              icon_color: "#bb9af7",
+              name: "deviantart",
+              url: "https://www.deviantart.com/",
+              icon: "brand-deviantart",
+              icon_color: "#9ece6a",
             },
             {
               name: "pixiv",
-              url: "https://pixiv.com",
-              icon: "pencil",
+              url: "https://pixiv.net/",
+              icon: "square-rounded-letter-p",
               icon_color: "#7aa2f7",
             },
           ],
@@ -153,7 +153,7 @@ const default_config = {
     },
     {
       name: "devops",
-      background_url: "src/img/banners/dev-sh.gif",
+      background_url: "src/img/banners/dev.webp",
       categories: [
         {
           name: "repositories",
@@ -228,7 +228,7 @@ const default_config = {
     },
     {
       name: "myself",
-      background_url: "src/img/banners/chill-sh.gif",
+      background_url: "src/img/banners/chill.webp",
       categories: [
         {
           name: "mails",
@@ -265,7 +265,7 @@ const default_config = {
             {
               name: "proton",
               url: "https://drive.proton.me/",
-              icon: "folders",
+              icon: "folder",
               icon_color: "#bb9af7",
             },
           ],
@@ -274,7 +274,7 @@ const default_config = {
     },
     {
       name: "bakery",
-      background_url: "src/img/banners/bakery-sh.gif",
+      background_url: "src/img/banners/bakery.webp",
       categories: [
         {
           name: 'fun',
@@ -323,7 +323,7 @@ const default_config = {
     },
     {
       name: "server",
-      background_url: "src/img/banners/star-sh.gif",
+      background_url: "src/img/banners/star.webp",
       categories: [
         {
           name: "dashboard",

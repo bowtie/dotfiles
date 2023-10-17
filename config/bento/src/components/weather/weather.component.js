@@ -97,11 +97,11 @@ class Weather extends Component {
       }
 
       .weather-condition-icon.sunny {
-          color: #ff9e64;
+          color: #e0af68;
       }
 
       .weather-condition-icon.cloudy {
-          color: #73daca;
+          color: #7aa2f7;
       }
     `;
   }
