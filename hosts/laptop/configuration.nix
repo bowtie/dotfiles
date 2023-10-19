@@ -39,7 +39,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gnome.gnome-software # for flatpak
     home-manager
     git
     wget
@@ -87,6 +86,13 @@
     hostName = "swift";
     networkmanager.enable = true;
     networkmanager.wifi.powersave = false;
+  };
+
+  # bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+    settings.General.Experimental = true; # for gnome-bluetooth percentage
   };
 
   services.openssh = {

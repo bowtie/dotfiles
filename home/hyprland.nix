@@ -4,6 +4,7 @@
   ...
 }: let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  hyprbars = inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars;
 
   launcher = pkgs.writeShellScriptBin "hypr" ''
     #!/${pkgs.bash}/bin/bash
@@ -48,6 +49,7 @@ in {
     systemdIntegration = true;
     # enableNvidiaPatches = true;
     xwayland.enable = true;
+    # plugins = [ hyprbars ];
     extraConfig = ''
       source=~/.config/hypr/config/monitors.conf
       source=~/.config/hypr/config/settings.conf
