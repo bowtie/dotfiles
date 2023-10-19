@@ -18,6 +18,7 @@
     hardware.url = "github:nixos/nixos-hardware";
 
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     ags.url = "github:Aylur/ags";
 
     lf-icons = {

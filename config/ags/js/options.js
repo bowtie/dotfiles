@@ -5,9 +5,6 @@ export default {
     // number of workspaces shown on panel and overview
     workspaces: 5,
 
-    //
-    dockItemSize: 56,
-
     battaryBar: {
         // wether to show percentage by deafult
         showPercentage: false,
@@ -26,6 +23,20 @@ export default {
     // the slide down animation on quicksettings and dashboard
     windowAnimationDuration: 250,
 
-    // keyboard id for brightnessctl
-    brightnessctlKBD: 'asus::kbd_backlight',
+    dock: {
+        iconSize: 56,
+        pinnedApps: [
+            'firefox',
+            'org.wezfurlong.wezterm',
+            'org.gnome.Nautilus',
+            'org.gnome.Calendar',
+            'vscodium',
+            'signal-desktop',
+            'github-desktop',
+            'discord',
+            'spotify',
+            'com.usebottles.bottles',
+            'org.gnome.Software',
+        ],
+    },
 };

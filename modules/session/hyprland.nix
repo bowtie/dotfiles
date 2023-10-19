@@ -32,6 +32,7 @@
     gnome-control-center
     gnome-weather
     gnome-calculator
+    gnome-software # for flatpak
   ];
 
   systemd = {
@@ -62,10 +63,5 @@
       gnome-keyring.enable = true;
       gnome-online-accounts.enable = true;
     };
-  };
-
-  hardware.bluetooth = {
-    enable = true;
-    settings.General.Experimental = true;
   };
 }
