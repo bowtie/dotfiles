@@ -51,7 +51,7 @@ in {
       TERMINAL = "kitty";
       BAT_THEME = "base16";
       GOPATH = "${homeDirectory}/.local/share/go";
-      GOMODCACHE = "${homeDirectory}/go/pkg/mod";
+      GOMODCACHE = "${homeDirectory}/.local/share/go/pkg/mod";
     };
 
     sessionPath = [

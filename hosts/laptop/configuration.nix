@@ -53,8 +53,10 @@
   environment.shells = with pkgs; [fish];
 
   services = {
-    xserver.enable = true;
-    xserver.excludePackages = [pkgs.xterm];
+    xserver = {
+      enable = true;
+      excludePackages = [pkgs.xterm];
+    };
     flatpak.enable = true;
     # most likely useless since will use placeholder driver, Zen 1 has no p_state
     # might also conflict with auto-cpufreq
