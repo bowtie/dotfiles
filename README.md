@@ -13,6 +13,7 @@
 - [ ] -- home assistant
 - [ ] -- syncthing
 - [ ] -- immich
+- [ ] -- mealie / tandoor
 - [ ] neovim / helix
 - [ ] home profiles
 - [ ] theme
