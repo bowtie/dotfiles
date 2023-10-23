@@ -6,7 +6,6 @@ const WP = `/home/${Utils.USER}/Pictures/Wallpapers/`;
  * @param {function(string): string} edit
  * @returns {Record<string, string>}
  */
-
 const editScheme = (scheme, edit) => {
     /** @type {Record<string, string>} */
     const obj = {};

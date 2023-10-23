@@ -73,6 +73,7 @@ export default index => {
                 c.at[1] -= Hyprland.monitors.find(m => m.name === Hyprland.getWorkspace(c.workspace.id).monitor).y;
                 c.mapped && fixed.put(Client(c), c.at[0] * SCALE, c.at[1] * SCALE);
             });
+
         fixed.show_all();
     };
 
