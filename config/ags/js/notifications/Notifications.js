@@ -26,10 +26,9 @@ const Popups = () => {
         if (!id || Notifications.dnd)
             return;
 
-
-            const n = Notifications.getNotification(id);
-            if (blackList.includes(n?.app_name))
-                return;
+        const n = Notifications.getNotification(id);
+        if (blackList.includes(n?.app_name))
+            return;
 
         map.delete(id);
         map.set(id, Notification(n));
