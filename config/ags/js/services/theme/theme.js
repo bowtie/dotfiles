@@ -12,12 +12,16 @@ class ThemeService extends Service {
 
     get themes() { return themes; }
 
-    _defaultAvatar = '/home/${Utils.USER}/Pictures/Avatars/bowtie.png';
+    _defaultAvatar = `/home/${Utils.USER}/Pictures/avatars/donna.jpg`;
     _defaultTheme = themes[0].name;
 
     constructor() {
         super();
-        Utils.exec('swww init');
+        try {
+            Utils.exec('swww init');
+        } catch (error) {
+            print('missing dependancy: swww');
+        }
         this.setup();
     }
 
@@ -56,7 +60,7 @@ class ThemeService extends Service {
     }
 
     setupOther() {
-        const darkmode = this.getSetting('color_scheme') === 'dark' || 'night';
+        const darkmode = this.getSetting('color_scheme') === 'dark';
 
         if (Utils.exec('which gsettings')) {
             const gsettings = 'gsettings set org.gnome.desktop.interface color-scheme';
@@ -70,7 +74,7 @@ class ThemeService extends Service {
             '--transition-type', 'grow',
             '--transition-pos', Utils.exec('hyprctl cursorpos').replace(' ', ''),
             this.getSetting('wallpaper'),
-        ]).catch(print);
+        ]).catch(err => console.error(err));
     }
 
     get settings() {
@@ -89,7 +93,9 @@ class ThemeService extends Service {
     setSetting(prop, value) {
         const settings = this.settings;
         settings[prop] = value;
-        Utils.writeFile(JSON.stringify(settings, null, 2), THEME_CACHE).catch(print);
+        Utils.writeFile(JSON.stringify(settings, null, 2), THEME_CACHE)
+            .catch(err => console.error(err));
+
         this._settings = settings;
         this.emit('changed');
 
