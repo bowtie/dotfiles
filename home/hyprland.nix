@@ -47,7 +47,7 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     package = hyprland;
-    systemdIntegration = true;
+    systemd.enable = true;
     # enableNvidiaPatches = true;
     xwayland.enable = true;
     # plugins = [ hyprbars borderspp ];
