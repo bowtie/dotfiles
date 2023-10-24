@@ -12,7 +12,7 @@ class ThemeService extends Service {
 
     get themes() { return themes; }
 
-    _defaultAvatar = `/home/${Utils.USER}/Pictures/avatars/donna.jpg`;
+    _defaultAvatar = `/home/${Utils.USER}/Pictures/Avatars/bowtie.jpg`;
     _defaultTheme = themes[0].name;
 
     constructor() {
@@ -60,7 +60,7 @@ class ThemeService extends Service {
     }
 
     setupOther() {
-        const darkmode = this.getSetting('color_scheme') === 'dark';
+        const darkmode = this.getSetting('color_scheme') === 'dark' || 'night';
 
         if (Utils.exec('which gsettings')) {
             const gsettings = 'gsettings set org.gnome.desktop.interface color-scheme';

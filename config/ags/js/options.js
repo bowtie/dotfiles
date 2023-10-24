@@ -27,7 +27,7 @@ export default {
         iconSize: 56,
         pinnedApps: [
             'firefox',
-            'org.wezfurlong.wezterm',
+            'kitty',
             'org.gnome.Nautilus',
             'org.gnome.Calendar',
             'vscodium',
