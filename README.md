@@ -11,9 +11,10 @@
 - [ ] -- uptime kuma
 - [ ] -- plex / jellyfin
 - [ ] -- home assistant
-- [ ] -- syncthing
+- [ ] -- syncthing / vw
 - [ ] -- immich
-- [ ] -- mealie / tandoor
+- [ ] -- mealie / tandoor / kitchenowl
+- [ ] -- kanban board
 - [ ] neovim / helix
 - [ ] home profiles
 - [ ] theme
