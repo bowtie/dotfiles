@@ -73,7 +73,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-      extraSpecialArgs = {inherit inputs username pkgs;};
+      extraSpecialArgs = {inherit inputs username;};
       modules = [
         nur.nixosModules.nur
         ./home/home.nix
