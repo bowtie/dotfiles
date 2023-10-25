@@ -17,6 +17,9 @@
 
     hardware.url = "github:nixos/nixos-hardware";
 
+    programsdb.url = "github:wamserma/flake-programs-sqlite";
+    programsdb.inputs.nixpkgs.follows = "nixpkgs";
+
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     ags.url = "github:Aylur/ags";
