@@ -20,6 +20,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     ags.url = "github:Aylur/ags";
+    spicetify-nix.url = github:MichaelPachec0/spicetify-nix;
 
     lf-icons = {
       url = "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example";
@@ -41,6 +42,7 @@
     hyprland,
     ags,
     lf-icons,
+    spicetify-nix,
     ...
   } @ inputs: let
     username = "zoushie";
@@ -73,7 +75,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-      extraSpecialArgs = {inherit inputs username;};
+      extraSpecialArgs = {inherit inputs username spicetify-nix;};
       modules = [
         nur.nixosModules.nur
         ./home/home.nix

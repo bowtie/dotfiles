@@ -17,6 +17,7 @@ in {
     ./kitty.nix
     ./neofetch.nix
     ./packages.nix
+    ./spotify.nix
     ./starship.nix
     ./theme.nix
     ./wezterm.nix
