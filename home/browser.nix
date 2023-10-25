@@ -18,10 +18,12 @@ in {
       target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
       source = fetchTarball {
         url = "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz";
-        sha256 = "0qj007n30q2gmkbzbbi04v04cw13gzav01abcnmrq9xmls8cr7lp";
+        sha256 = "1flrax7xs10jhf81k740ryhvglzm520qn2xgm8dknk9jfpvi4n2g";
       };
     };
   };
+
+  home.file.".mozilla/firefox/default/chrome/firefox-tokyo-night/theme.css".source = ../home/firefox/theme.css;
 
   programs.firefox = {
     enable = true;
@@ -61,7 +63,7 @@ in {
       extraConfig = builtins.readFile betterfox;
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";
-        @import "firefox-gnome-theme/theme/colors/dark.css";
+        @import "firefox-tokyo-night/theme.css";
       '';
 
       search = {
