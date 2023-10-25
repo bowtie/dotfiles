@@ -45,10 +45,6 @@
   } @ inputs: let
     username = "zoushie";
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
   in {
     nixosConfigurations."miya" = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs username system;};
@@ -73,7 +69,10 @@
     };
 
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
       extraSpecialArgs = {inherit inputs username pkgs;};
       modules = [
         nur.nixosModules.nur
