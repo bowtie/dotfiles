@@ -2,21 +2,12 @@
   inputs,
   pkgs,
   ...
-}: let
-  ags = inputs.ags.packages.${pkgs.system}.default;
-  override = _: prev: {
-    buildInputs = with pkgs;
-      prev.buildInputs
-      ++ [
-        # libadwaita
-        libsoup_3
-      ];
-  };
-in {
-  home.packages = with pkgs; [
-    (ags.overrideAttrs override)
-    (python311.withPackages (p: [p.python-pam]))
-  ];
+}: {
+  imports = [inputs.ags.homeManagerModules.default];
 
-  xdg.configFile.ags.source = ../config/ags;
+  programs.ags = {
+    enable = true;
+    configDir = ../config/ags;
+    extraPackages = [pkgs.libsoup_3];
+  };
 }

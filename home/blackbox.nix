@@ -1,11 +1,6 @@
-{pkgs, ...}: let
-  substitute = name:
-    pkgs.writeShellScriptBin name ''
-      ${pkgs.blackbox-terminal}/bin/blackbox "$@"
-    '';
-in {
+{pkgs, ...}: {
   home = {
-    packages = with pkgs; [blackbox-terminal (substitute "xterm")];
+    packages = with pkgs; [blackbox-terminal];
   };
 
   home.file.".local/share/blackbox/schemes/japanesque.json".text = ''
