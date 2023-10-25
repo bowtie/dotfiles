@@ -13,7 +13,7 @@
 		--gnome-toolbar-star-button: #e0af68;
 
 		/* Window */
-		--gnome-window-background: #1a1b26;
+		--gnome-window-background: #24283b;
 		--gnome-window-color: white;
 		--gnome-view-background: #24283b;
 
@@ -71,7 +71,7 @@
 
 	/* Private and backdrop colors */
 	:root[privatebrowsingmode="temporary"]:-moz-window-inactive {
-		--gnome-headerbar-background: 1a1b26 !important;
+		--gnome-headerbar-background: #1a1b26 !important;
 		--gnome-tabbar-tab-hover-background: #24283b; /* Hardcoded color */
 		--gnome-tabbar-tab-active-background: #24283b; /* Hardcoded color */
 	}
