@@ -2,6 +2,7 @@
   inputs,
   lib,
   config,
+  pkgs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -26,4 +27,6 @@
       options = "--delete-older-than +3";
     };
   };
+  environment.etc."programs.sqlite".source = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
+  programs.command-not-found.dbPath = "/etc/programs.sqlite";
 }
