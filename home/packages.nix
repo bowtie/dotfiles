@@ -33,6 +33,7 @@
 
     # tools
     adguardian
+    alejandra
     bat
     eza
     ranger

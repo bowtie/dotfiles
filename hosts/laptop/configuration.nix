@@ -22,6 +22,8 @@
     ../../modules/power/switcher.nix
   ];
 
+  virtualisation.docker.enable = true;
+
   programs = {
     dconf.enable = true;
     fish.enable = true;
@@ -81,7 +83,7 @@
   users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = ["networkmanager" "wheel" "audio"];
+    extraGroups = ["networkmanager" "wheel" "audio" "docker"];
   };
 
   networking = {
@@ -102,6 +104,13 @@
     permitRootLogin = "no";
     passwordAuthentication = false;
   };
+
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024;
+    }
+  ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
