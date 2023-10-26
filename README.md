@@ -7,14 +7,15 @@
 - [ ] power-profiles.js
 - [ ] weather.js
 - [x] server config
-- [ ] -- docker w/ portainer
-- [ ] -- uptime kuma
-- [ ] -- plex / jellyfin
-- [ ] -- home assistant
-- [ ] -- syncthing / vw
-- [ ] -- immich
-- [ ] -- mealie / tandoor / kitchenowl
-- [ ] -- kanban board
+- [x] -- docker w/ portainer
+- [x] -- uptime kuma
+- [x] -- plex / jellyfin
+- [x] -- home assistant
+- [x] -- syncthing / vw
+- [x] -- immich
+- [x] -- mealie / tandoor / kitchenowl
+- [x] -- planka
+- [ ] move todo stuff to planka and make proper readme
 - [ ] neovim / helix
 - [ ] home profiles
 - [ ] theme
