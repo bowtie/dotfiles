@@ -13,8 +13,9 @@
 - [x] -- home assistant
 - [x] -- syncthing / vw
 - [x] -- immich
-- [x] -- mealie / tandoor / kitchenowl
+- [x] -- mealie / tandoor
 - [x] -- planka
+- [ ] declare them as nix containers
 - [ ] move todo stuff to planka and make proper readme
 - [ ] neovim / helix
 - [ ] home profiles
@@ -22,6 +23,7 @@
 - [ ] agenix / sops
 - [x] electron wl fix
 - [ ] [#258524](https://github.com/NixOS/nixpkgs/issues/258524)
+- [ ] [#4483](https://github.com/wez/wezterm/issues/4483)
 - [x] fix wifi powersave ~~while plugged~~
 - [ ] move auto-cpufreq to nixpkgs.service when updated to v2
 
