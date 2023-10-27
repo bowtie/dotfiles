@@ -30,6 +30,7 @@
     keepassxc
     signal-desktop
     dconf-editor
+    # lutris
 
     # tools
     adguardian
