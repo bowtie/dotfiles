@@ -11,5 +11,6 @@
     efi.canTouchEfiVariables = true;
   };
 
+  # xanmod_latest might be better here
   boot.kernelPackages = pkgs.linuxPackages_zen;
 }
