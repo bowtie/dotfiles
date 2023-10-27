@@ -16,6 +16,7 @@ in {
     ./lf.nix
     ./kitty.nix
     ./neofetch.nix
+    ./neovim.nix
     ./packages.nix
     ./spotify.nix
     ./starship.nix
