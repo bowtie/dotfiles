@@ -1,10 +1,12 @@
 return {
-    { "Mofiqul/vscode.nvim" },
-    { "Mofiqul/adwaita.nvim" },
-    { "nyoom-engineering/oxocarbon.nvim" },
     {
         "LazyVim/LazyVim",
-        opts = { colorscheme = "catppuccin" },
+        opts = { colorscheme = "tokyonight" },
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = true,
+        opts = { style = "night" },
     },
     {
         "catppuccin/nvim",
