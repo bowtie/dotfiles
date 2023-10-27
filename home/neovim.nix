@@ -1,17 +1,7 @@
 {pkgs, ...}: {
   home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
-
-  xdg.desktopEntries."nvim" = {
-    name = "NeoVim";
-    comment = "Edit text files";
-    icon = "nvim";
-    exec = "${pkgs.wezterm}/bin/kitty ${pkgs.neovim}/bin/nvim %F";
-    categories = ["TerminalEmulator"];
-    terminal = false;
-    mimeType = ["text/plain"];
+    EDITOR = "codium";
+    VISUAL = "codium";
   };
 
   programs.neovim = {
