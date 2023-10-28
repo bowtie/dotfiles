@@ -255,7 +255,7 @@ const default_config = {
               name: "cryptohack",
               url: "https://cryptohack.org/challenges/",
               icon: "brain",
-              icon_color: "#ff9e64",
+              icon_color: "#e0af68",
             },
             {
               name: "tryhackme",
