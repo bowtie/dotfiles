@@ -3,7 +3,8 @@ export default {
     preferredMpris: 'spotify',
 
     // number of workspaces shown on panel and overview
-    workspaces: 5,
+    // set to 0 to make it dynamic
+    workspaces: 7,
 
     battaryBar: {
         // wether to show percentage by deafult
