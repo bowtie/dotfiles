@@ -1,35 +1,15 @@
-## 🗒 Todo
-- [x] plasma-session
-- [x] better firefox
-- [x] nur
-- [x] ~~not~~ bento startpage
-- [x] ags tokyo-night
-- [ ] power-profiles.js
-- [ ] weather.js
-- [x] server config
-- [x] -- docker w/ portainer
-- [x] -- uptime kuma
-- [x] -- plex / jellyfin
-- [x] -- home assistant
-- [x] -- syncthing / vw
-- [x] -- immich
-- [x] -- mealie / tandoor
-- [x] -- planka
-- [ ] declare them as nix containers
-- [ ] move todo stuff to planka and make proper readme
-- [x] neovim / helix
-- [ ] home profiles
-- [ ] theme
-- [x] ~~agenix / sops~~ (not needed?)
-- [x] electron wl fix
-- [x] [#258524](https://github.com/NixOS/nixpkgs/issues/258524)
-- [ ] [#4483](https://github.com/wez/wezterm/issues/4483)
-- [x] fix wifi powersave ~~while plugged~~
-- [ ] move auto-cpufreq to nixpkgs.service when updated to v2
-
-### firmware bugs
-- [x] research ryzen 2500u freeze [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=196683) [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1772081) [[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1562530)
-- [ ] research acpi table poorly written by acer [[1]](https://github.com/DavidS95/Smokeless_UMAF) [[2]](https://github.com/lbschenkel/acer-sf314_43-acpi-fix)
-- [ ] write zenstates script to disable C6 at start
-- [ ] research AMD CBS *(outdated?)*
-
+<h1 align="center">
+  <img src="https://camo.githubusercontent.com/8c73ac68e6db84a5c58eef328946ba571a92829b3baaa155b7ca5b3521388cc9/68747470733a2f2f692e696d6775722e636f6d2f367146436c41312e706e67" width="100px" /> <br>
+  
+  bowtie's dotfiles </h1>
+  <p align="center">
+  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> </p>
+  
+<p align="center">
+    <a href="https://nixos.org/">
+        <img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"></a>
+    <a href="https://nixos-and-flakes.thiscute.world/">
+        <img src="https://img.shields.io/static/v1?label=Nix Flakes&message=learning&style=for-the-badge&logo=nixos&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41"></a>
+</p>
+<p>Welcome to the ultimate hideout of nix magic spells that conjure up my extraordinary systems! Think of this repository as a cozy mansion filled with ingenious code, where snippets of borrowed brilliance add a sprinkle of enchantment.<p>
+<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.png" /></p>
