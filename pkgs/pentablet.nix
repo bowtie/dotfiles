@@ -20,13 +20,12 @@
 in
   stdenv.mkDerivation rec {
     pname = "xp-pen-driver";
-    version = "3.4.6-230714";
+    version = "3.4.9-231023";
 
     src = fetchzip {
-      url = "https://download01.xp-pen.com/file/2023/07/XPPenLinux${version}.x86_64.tar.gz";
+      url = "https://download01.xp-pen.com/file/2023/11/XPPenLinux${version}.tar.gz";
       name = "xp-pen-driver-${version}.tar.gz";
-      # fix this later
-      sha256 = "sha256-";
+      sha256 = "1f585r9n58hwc0f5zp3axx5zpz9ammyqyiir3q6pv52y7bl6zxq3";
     };
 
     nativeBuildInputs = [

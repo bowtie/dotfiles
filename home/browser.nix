@@ -7,7 +7,7 @@
     pkgs.fetchurl
     {
       url = "https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js";
-      hash = "sha256-V09SBDu9RgOd2BHmMjbqyGGKdnIx4nBmW5u6f5Iu1L4=";
+      sha256 = "1gnl5s97zflvbdk71qiif9v8lqf8x8v35rhiv2fh6imx7c254ksp";
     };
 in {
   home = {
@@ -18,7 +18,7 @@ in {
       target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
       source = fetchTarball {
         url = "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz";
-        sha256 = "1flrax7xs10jhf81k740ryhvglzm520qn2xgm8dknk9jfpvi4n2g";
+        sha256 = "00hkng2fnmbvn2spcrzr6b607p7f5r5xgs3flksjsgcycz48nkir";
       };
     };
   };

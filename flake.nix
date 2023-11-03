@@ -23,7 +23,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     ags.url = "github:Aylur/ags";
-    spicetify-nix.url = "github:MichaelPachec0/spicetify-nix";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
 
     lf-icons = {
       url = "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example";

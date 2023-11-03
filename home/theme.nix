@@ -33,7 +33,11 @@
   cursor-package = pkgs.qogir-icon-theme;
 in {
   home = {
-    packages = [nerdfonts moreWaita];
+    packages = [
+      pkgs.font-awesome
+      nerdfonts
+      moreWaita
+    ];
     sessionVariables.XCURSOR_THEME = cursor-theme;
     pointerCursor = {
       package = cursor-package;
