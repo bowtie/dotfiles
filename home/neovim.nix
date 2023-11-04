@@ -1,7 +1,18 @@
 {pkgs, ...}: {
   home.sessionVariables = {
-    EDITOR = "codium";
-    VISUAL = "codium";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
+  xdg.desktopEntries."nvim" = {
+    name = "NeoVim";
+    comment = "Edit text files";
+    icon = "nvim";
+    # xterm is a symlink and not actually xterm
+    exec = "xterm -e ${pkgs.neovim}/bin/nvim %F";
+    categories = ["TerminalEmulator"];
+    terminal = false;
+    mimeType = ["text/plain"];
   };
 
   programs.neovim = {

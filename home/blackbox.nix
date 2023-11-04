@@ -1,6 +1,16 @@
-{pkgs, ...}: {
+{pkgs, ...}:
+# let
+#   xterm = pkgs.writeShellScriptBin "xterm" ''
+#     ${pkgs.blackbox-terminal}/bin/blackbox "$@"
+#   '';
+# in
+{
   home = {
-    packages = with pkgs; [blackbox-terminal];
+    packages = with pkgs; [
+      blackbox-terminal
+      # xterm
+    ];
+    # sessionVariables.TERMINAL = "blackbox";
   };
 
   home.file.".local/share/blackbox/schemes/japanesque.json".text = ''
