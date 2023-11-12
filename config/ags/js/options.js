@@ -79,7 +79,7 @@ export default {
 
     shadow: Option('rgba(0, 0, 0, .6)'),
     drop_shadow: Option(true, { scss: 'drop-shadow' }),
-    avatar: Option(`/home/${USER}/Pictures/avatars/donna.jpg`, { format: v => `"${v}"` }),
+    avatar: Option(`/home/${USER}/Pictures/Avatars/bowtie.png`, { format: v => `"${v}"` }),
 
     applauncher: {
         width: Option(500),
