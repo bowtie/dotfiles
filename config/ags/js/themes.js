@@ -66,6 +66,9 @@ export default [
         name: 'Tokyo Night',
         icon: '🗼',
         'desktop.wallpaper': WP + 'market-garden.png',
+        'spacing': 11,
+        'padding': 10,
+        'radii': 12,
         'color.red': '#f7768e',
         'color.green': '#9ece6a',
         'color.yellow': '#e0af68',
@@ -80,5 +83,6 @@ export default [
         'accent.gradient': 'to left, $accent, darken($accent, 6%)',
         'desktop.screen_corners': false,
         'bar.separators': false,
+        'popover.padding.multiplier': 1.8,
     }),
 ];
