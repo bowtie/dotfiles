@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland; #-nvidia
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
 
   launcher = pkgs.writeShellScriptBin "hypr" ''
@@ -98,6 +98,7 @@ in {
         (f "Color Picker")
         (f "xdg-desktop-portal")
         (f "xdg-desktop-portal-gnome")
+        (f "com.github.Aylur.ags")
         "workspace 7, title:Spotify"
       ];
 
