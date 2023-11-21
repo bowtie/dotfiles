@@ -23,8 +23,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      # Keep the last 3 generations
-      options = "--delete-older-than +3";
+      options = "--delete-older-than 7d";
     };
   };
   environment.etc."programs.sqlite".source = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
