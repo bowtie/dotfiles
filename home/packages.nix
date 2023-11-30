@@ -1,12 +1,4 @@
 {pkgs, ...}: {
-  # hide entries
-  xdg.desktopEntries = {
-    "ranger" = {
-      name = "ranger";
-      noDisplay = true;
-    };
-  };
-
   home.packages = with pkgs;
   with nodePackages_latest;
   with gnome; [
@@ -83,11 +75,8 @@
     # langs
     nodejs
     go
-    bun
-    sassc
+    gcc
     typescript
-    meson
-    ninja
     eslint
   ];
 }

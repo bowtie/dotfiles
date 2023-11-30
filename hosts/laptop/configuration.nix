@@ -17,12 +17,10 @@
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
     ../../modules/sound/audio.nix
-    ../../modules/dns/adguard.nix
-    ../../modules/dns/dnscrypt.nix
+    #../../modules/dns/adguard.nix
+    #../../modules/dns/dnscrypt.nix
     ../../modules/power/switcher.nix
   ];
-
-  virtualisation.docker.enable = true;
 
   programs = {
     dconf.enable = true;
