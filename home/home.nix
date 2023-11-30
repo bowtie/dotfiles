@@ -32,6 +32,7 @@ in {
     package = pkgs.nix;
     settings = {
       experimental-features = ["nix-command" "flakes"];
+      warn-dirty = false;
     };
   };
 
@@ -53,7 +54,7 @@ in {
       TERMINAL = "kitty";
       BAT_THEME = "base16";
       GOPATH = "${homeDirectory}/.local/share/go";
-      GOMODCACHE = "${homeDirectory}/.local/share/go/pkg/mod";
+      GOMODCACHE = "${homeDirectory}/./go/pkg/mod";
     };
 
     sessionPath = [

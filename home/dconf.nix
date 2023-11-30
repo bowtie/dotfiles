@@ -90,7 +90,7 @@ with lib.hm.gvariant; {
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
-      command = "kitty";
+      command = "xterm";
       name = "term";
     };
 
@@ -104,8 +104,12 @@ with lib.hm.gvariant; {
     "org/gnome/shell" = {
       favorite-apps = [
         "firefox.desktop"
+        "org.wezfurlong.wezterm.desktop"
         "org.gnome.Nautilus.desktop"
         "org.gnome.Calendar.desktop"
+        "discord.desktop"
+        "spotify.desktop"
+        "com.usebottles.bottles.desktop"
         "org.gnome.Software.desktop"
       ];
     };
@@ -123,7 +127,12 @@ with lib.hm.gvariant; {
     };
 
     "com/github/stunkymonkey/nautilus-open-any-terminal" = {
-      terminal = "kitty";
+      terminal = "wezterm";
+    };
+
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
     };
   };
 }

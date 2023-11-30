@@ -1,25 +1,16 @@
 {
   pkgs,
   config,
+  inputs,
   ...
-}: let
-  betterfox =
-    pkgs.fetchurl
-    {
-      url = "https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js";
-      sha256 = "1gnl5s97zflvbdk71qiif9v8lqf8x8v35rhiv2fh6imx7c254ksp";
-    };
-in {
+}: {
   home = {
     sessionVariables.BROWSER = "firefox";
     sessionVariables.MOZ_USE_XINPUT2 = "1";
 
     file."firefox-gnome-theme" = {
       target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
-      source = fetchTarball {
-        url = "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz";
-        sha256 = "00hkng2fnmbvn2spcrzr6b607p7f5r5xgs3flksjsgcycz48nkir";
-      };
+      source = inputs.firefox-gnome-theme;
     };
   };
 
@@ -54,16 +45,20 @@ in {
       settings = {
         "layout.css.devPixelsPerPx" = "1.25"; # when hi-dpi workstation
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-        # "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        # "browser.tabs.drawInTitlebar" = true;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "svg.context-properties.content.enabled" = true;
-        "gnomeTheme.normalWidthTabs" = true;
-        "gnomeTheme.tabsAsHeaderbar" = true;
+        "gnomeTheme.hideSingleTab" = true;
+        "gnomeTheme.bookmarksToolbarUnderTabs" = true;
+        "gnomeTheme.normalWidthTabs" = false;
+        "gnomeTheme.tabsAsHeaderbar" = false;
       };
-      extraConfig = builtins.readFile betterfox;
+      extraConfig = builtins.readFile inputs.betterfox;
       userChrome = ''
         @import "firefox-gnome-theme/userChrome.css";
         @import "firefox-tokyo-night/theme.css";
+      '';
+      userContent = ''
+        @import "firefox-gnome-theme/userContent.css";
       '';
 
       search = {

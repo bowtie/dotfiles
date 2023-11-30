@@ -34,6 +34,16 @@
       url = "https://github.com/somepaulo/MoreWaita/archive/refs/heads/main.zip";
       flake = false;
     };
+
+    firefox-gnome-theme = {
+      url = "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/master.tar.gz";
+      flake = false;
+    };
+
+    betterfox = {
+      url = "https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js";
+      flake = false;
+    };
   };
 
   outputs = {

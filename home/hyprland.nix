@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland; #-nvidia
+  hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
 
   launcher = pkgs.writeShellScriptBin "hypr" ''
@@ -30,7 +30,6 @@ in {
     enable = true;
     package = hyprland;
     systemd.enable = true;
-    # enableNvidiaPatches = lib.mkIf (config.networking.hostName == "miya") true;
     xwayland.enable = true;
     # plugins = with plugins; [ hyprbars borderspp ];
 
