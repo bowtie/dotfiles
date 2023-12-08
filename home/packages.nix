@@ -29,7 +29,6 @@
     alejandra
     bat
     eza
-    ranger
     fd
     ripgrep
     fzf

@@ -22,6 +22,7 @@ in {
     ./starship.nix
     ./theme.nix
     ./wezterm.nix
+    ./mimelist.nix
   ];
 
   news.display = "show";

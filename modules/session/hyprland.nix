@@ -5,7 +5,6 @@
 }: {
   services.xserver = {
     displayManager.startx.enable = true;
-    displayManager.gdm.enable = true;
   };
 
   programs.hyprland = {

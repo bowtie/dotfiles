@@ -12,7 +12,7 @@
 
     /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
-    # ../../modules/session/gnome.nix
+    ../../modules/session/gnome.nix
     ../../modules/session/hyprland.nix
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
@@ -80,14 +80,17 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    shell = pkgs.fish;
-    extraGroups = ["networkmanager" "wheel" "audio" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "video"
+    ];
   };
 
   networking = {
     hostName = "swift";
     networkmanager.enable = true;
-    networkmanager.wifi.powersave = false;
   };
 
   # bluetooth
@@ -95,12 +98,6 @@
     enable = true;
     powerOnBoot = false;
     settings.General.Experimental = true; # for gnome-bluetooth percentage
-  };
-
-  services.openssh = {
-    enable = true;
-    permitRootLogin = "no";
-    passwordAuthentication = false;
   };
 
   swapDevices = [
