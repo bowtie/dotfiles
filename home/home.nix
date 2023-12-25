@@ -51,6 +51,7 @@ in {
     sessionVariables = {
       QT_XCB_GL_INTEGRATION = "none"; # kde-connect
       NIXPKGS_ALLOW_UNFREE = "1";
+      NIXPKGS_ALLOW_INSECURE = "1";
       SHELL = "${pkgs.fish}/bin/fish";
       TERMINAL = "kitty";
       BAT_THEME = "base16";
