@@ -12,7 +12,9 @@
 
     /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
-    ../../modules/session/gnome.nix
+    ../../modules/cache
+    #../../modules/session/gnome.nix
+    ../../modules/session/greetd.nix
     ../../modules/session/hyprland.nix
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
@@ -62,6 +64,7 @@
     # might also conflict with auto-cpufreq
     power-profiles-daemon.enable = false;
     logind.lidSwitchExternalPower = "ignore";
+    tailscale.enable = true;
   };
 
   # enables powertop?

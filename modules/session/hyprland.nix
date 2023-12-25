@@ -3,9 +3,9 @@
   pkgs,
   ...
 }: {
-  services.xserver = {
-    displayManager.startx.enable = true;
-  };
+  #services.xserver = {
+  #  displayManager.startx.enable = true;
+  #};
 
   programs.hyprland = {
     enable = true;
@@ -25,6 +25,7 @@
   environment.systemPackages = with pkgs.gnome; [
     adwaita-icon-theme
     nautilus
+    baobab
     gnome-calendar
     gnome-system-monitor
     gnome-control-center
@@ -54,6 +55,7 @@
     devmon.enable = true;
     udisks2.enable = true;
     upower.enable = true;
+    #power-profiles-daemon.enable = true;
     accounts-daemon.enable = true;
     gnome = {
       evolution-data-server.enable = true;

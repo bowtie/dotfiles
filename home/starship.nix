@@ -3,6 +3,10 @@
     symbol = icon;
     format = "[$symbol ](${color})";
   };
+  pad = {
+    left = "";
+    right = "";
+  };
 in {
   programs.starship = {
     enable = true;
@@ -23,8 +27,16 @@ in {
         "$golang"
         "$cmd_duration"
         "$status"
-        "\n$character"
+        "$line_break"
+        "[❯](bold purple)"
+        ''''${custom.space}''
       ];
+      custom.space = {
+        when = ''! test $env'';
+        format = "  ";
+      };
+      continuation_prompt = "[∙](bright-black) ";
+      line_break = {disabled = false;};
       status = {
         symbol = "✗";
         not_found_symbol = "󰍉 Not Found";
@@ -40,35 +52,29 @@ in {
         min_time = 1000;
         format = "[$duration ](fg:yellow)";
       };
-      character = {
-        success_symbol = "[❯](bold purple)";
-        error_symbol = "[❯](bold red)";
-      };
       nix_shell = {
         disabled = false;
-        format = "[](fg:white)[ ](bg:white fg:black)[](fg:white) ";
+        format = "[${pad.left}](fg:white)[ ](bg:white fg:black)[${pad.right}](fg:white) ";
       };
       container = {
         symbol = " 󰏖";
         format = "[$symbol ](yellow dimmed)";
       };
       directory = {
-        format = " [](fg:bright-black)[$path](bg:bright-black fg:white)[](fg:bright-black)";
-        truncation_length = 4;
-        truncation_symbol = "~/…/";
+        format = " [${pad.left}](fg:bright-black)[$path](bg:bright-black fg:white)[${pad.right}](fg:bright-black)";
+        truncation_length = 6;
+        truncation_symbol = "~/󰇘/";
       };
-      directory.substitutions = {
-        "Documents" = "󰈙 ";
-        "Downloads" = " ";
-        "Music" = " ";
-        "Pictures" = " ";
-        "Videos" = " ";
-        "Projects" = "󱌢 ";
-        "School" = "󰑴 ";
-        "GitHub" = "";
-        ".config" = " ";
-        "Vault" = "󱉽 ";
-      };
+      # directory.substitutions = {
+      #   "Documents" = "󰈙 ";
+      #   "Downloads" = " ";
+      #   "Music" = " ";
+      #   "Pictures" = " ";
+      #   "Videos" = " ";
+      #   "Projects" = "󱌢 ";
+      #   "GitHub" = "";
+      #   ".config" = " ";
+      # };
       git_branch = {
         symbol = "";
         style = "";
@@ -76,7 +82,6 @@ in {
       };
       os = {
         disabled = false;
-        # format = "[](fg:blue)[$symbol](bg:blue fg:black)[](fg:blue)";
         format = "$symbol";
       };
       os.symbols = {

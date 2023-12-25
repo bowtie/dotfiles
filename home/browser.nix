@@ -23,11 +23,11 @@
       ublock-origin
       sponsorblock
       darkreader
-      keepassxc-browser
+      bitwarden
       privacy-pass
       auto-tab-discard
       skip-redirect
-      bypass-paywalls-clean
+      # bypass-paywalls-clean # out of date
       behave
     ];
     package = pkgs.firefox.override {
