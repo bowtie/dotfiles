@@ -10,11 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    auto-cpufreq = {
-      url = "github:adnanhodzic/auto-cpufreq";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hardware.url = "github:nixos/nixos-hardware";
 
     programsdb.url = "github:wamserma/flake-programs-sqlite";
@@ -50,7 +45,6 @@
     nixpkgs,
     home-manager,
     nur,
-    auto-cpufreq,
     hardware,
     hyprland,
     ags,
@@ -72,7 +66,6 @@
       specialArgs = {inherit inputs username system;};
       modules = [
         ./hosts/laptop/configuration.nix
-        auto-cpufreq.nixosModules.default
       ];
     };
 

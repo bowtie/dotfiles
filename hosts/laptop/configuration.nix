@@ -27,17 +27,6 @@
   programs = {
     dconf.enable = true;
     fish.enable = true;
-    auto-cpufreq.enable = true;
-    auto-cpufreq.settings = {
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-      };
-      battery = {
-        governor = "powersave";
-        turbo = "auto";
-      };
-    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -60,14 +49,10 @@
       excludePackages = [pkgs.xterm];
     };
     flatpak.enable = true;
-    # most likely useless since will use placeholder driver, Zen 1 has no p_state
-    # might also conflict with auto-cpufreq
-    power-profiles-daemon.enable = false;
     logind.lidSwitchExternalPower = "ignore";
     tailscale.enable = true;
   };
 
-  # enables powertop?
   powerManagement.powertop.enable = true;
 
   # KDE Connect
