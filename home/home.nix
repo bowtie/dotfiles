@@ -14,7 +14,7 @@ in {
     ./gammastep.nix
     ./hyprland.nix
     ./lf.nix
-    ./kitty.nix
+    ./mimelist.nix
     ./neofetch.nix
     ./neovim.nix
     ./packages.nix
@@ -22,7 +22,6 @@ in {
     ./starship.nix
     ./theme.nix
     ./wezterm.nix
-    ./mimelist.nix
   ];
 
   news.display = "show";
@@ -52,11 +51,9 @@ in {
       QT_XCB_GL_INTEGRATION = "none"; # kde-connect
       NIXPKGS_ALLOW_UNFREE = "1";
       NIXPKGS_ALLOW_INSECURE = "1";
-      SHELL = "${pkgs.fish}/bin/fish";
-      TERMINAL = "kitty";
       BAT_THEME = "base16";
       GOPATH = "${homeDirectory}/.local/share/go";
-      GOMODCACHE = "${homeDirectory}/./go/pkg/mod";
+      GOMODCACHE="${homeDirectory}/./go/pkg/mod";
     };
 
     sessionPath = [

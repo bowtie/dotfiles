@@ -18,10 +18,11 @@
     d-spy
     easyeffects
     # discord
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
+    # (discord.override {
+    #   withOpenASAR = true;
+    #   withVencord = true;
+    # })
+    vesktop
     github-desktop
     # bottles
     icon-library
@@ -49,6 +50,7 @@
     zip
     unzip
     glib
+    openssl
 
     # hyprland
     wl-gammactl
@@ -80,6 +82,7 @@
 
     # langs
     nodejs
+    bun
     go
     gcc
     typescript

@@ -23,6 +23,7 @@
   };
 
   environment.systemPackages = with pkgs.gnome; [
+    pkgs.loupe
     adwaita-icon-theme
     nautilus
     baobab
@@ -31,6 +32,7 @@
     gnome-control-center
     gnome-weather
     gnome-calculator
+    gnome-clocks
     gnome-software # for flatpak
   ];
 
@@ -55,7 +57,7 @@
     devmon.enable = true;
     udisks2.enable = true;
     upower.enable = true;
-    #power-profiles-daemon.enable = true;
+    power-profiles-daemon.enable = true;
     accounts-daemon.enable = true;
     gnome = {
       evolution-data-server.enable = true;
