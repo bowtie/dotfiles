@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://camo.githubusercontent.com/8c73ac68e6db84a5c58eef328946ba571a92829b3baaa155b7ca5b3521388cc9/68747470733a2f2f692e696d6775722e636f6d2f367146436c41312e706e67" width="100px" /><br>bowtie's dotfiles</h1>
+    <img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" width="100px" /><br>bowtie's dotfiles</h1>
 <p align="center">
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> </p>
 <p align="center">
