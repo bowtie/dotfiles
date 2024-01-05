@@ -22,6 +22,7 @@ in {
     ./starship.nix
     ./theme.nix
     ./wezterm.nix
+    ./monitor.nix
   ];
 
   news.display = "show";
@@ -53,7 +54,7 @@ in {
       NIXPKGS_ALLOW_INSECURE = "1";
       BAT_THEME = "base16";
       GOPATH = "${homeDirectory}/.local/share/go";
-      GOMODCACHE="${homeDirectory}/./go/pkg/mod";
+      GOMODCACHE = "${homeDirectory}/./go/pkg/mod";
     };
 
     sessionPath = [
