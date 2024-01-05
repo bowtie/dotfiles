@@ -21,7 +21,7 @@
     ../../modules/sound/audio.nix
     #../../modules/dns/adguard.nix
     #../../modules/dns/dnscrypt.nix
-    ../../modules/power/switcher.nix
+    #../../modules/power/monitor.nix
   ];
 
   programs = {
