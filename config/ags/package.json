@@ -1,21 +1,21 @@
 {
-  "name": "ags-dotfiles",
-  "version": "1.6.3",
-  "description": "My config files for AGS",
-  "main": "config.js",
-  "scripts": {
-      "lint": "eslint . --fix",
-      "stylelint": "stylelint"
-  },
-  "repository": {
-      "type": "git",
-      "url": "git+https://github.com/bowtie/dotfiles.git"
-  },
-  "author": "bowtie",
-  "credits": {
-      "url": "https://github.com/Aylur/dotfiles"
-  },
-  "homepage": "https://github.com/bowtie/dotfiles#readme",
+    "name": "ags-dotfiles",
+    "version": "1.6.4",
+    "description": "My config files for AGS",
+    "main": "config.js",
+    "scripts": {
+        "lint": "eslint . --fix",
+        "stylelint": "stylelint ./scss --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bowtie/dotfiles.git"
+    },
+    "author": "bowtie",
+    "credits": {
+        "url": "https://github.com/Aylur/dotfiles"
+    },
+    "homepage": "https://github.com/bowtie/dotfiles#readme",
     "devDependencies": {
         "@girs/dbusmenugtk3-0.4": "^0.4.0-3.2.0",
         "@girs/gobject-2.0": "^2.76.1-3.2.3",
