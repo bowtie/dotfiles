@@ -24,7 +24,7 @@ const MicrophoneIndicator = () => Widget.Icon().hook(Audio, icon => {
         return;
 
     const { muted, low, medium, high } = icons.audio.mic;
-s
+
     /** @type {Array<[number, string]>} */
     const cons = [[67, high], [34, medium], [1, low], [0, muted]];
     icon.icon = cons.find(([n]) => n <= Audio.microphone.volume * 100)?.[1] || '';
