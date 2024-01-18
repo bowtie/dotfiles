@@ -7,7 +7,6 @@
 in {
   imports = [
     ./ags.nix
-    ./blackbox.nix
     ./browser.nix
     ./dconf.nix
     ./fish.nix
@@ -37,14 +36,6 @@ in {
     };
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-    };
-  };
-
   home = {
     inherit username homeDirectory;
 
@@ -54,7 +45,7 @@ in {
       NIXPKGS_ALLOW_INSECURE = "1";
       BAT_THEME = "base16";
       GOPATH = "${homeDirectory}/.local/share/go";
-      GOMODCACHE = "${homeDirectory}/./go/pkg/mod";
+      GOMODCACHE = "${homeDirectory}/.cache/go/pkg/mod";
     };
 
     sessionPath = [

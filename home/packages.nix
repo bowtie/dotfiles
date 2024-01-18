@@ -14,23 +14,15 @@
 
     # gui
     (mpv.override {scripts = [mpvScripts.mpris];})
-    # spotify
     d-spy
     easyeffects
-    # discord
-    # (discord.override {
-    #   withOpenASAR = true;
-    #   withVencord = true;
-    # })
     vesktop
-    github-desktop
-    # bottles
     icon-library
     vscodium
-    keepassxc
+    bitwarden
     signal-desktop
     dconf-editor
-    # lutris
+    meld
 
     # tools
     adguardian
@@ -66,22 +58,17 @@
     swww
 
     # fun
-    fortune
-    jp2a
-    pywal
     glow
-    vhs
-    gum
     slides
-    charm
     skate
     yabridge
     yabridgectl
     wine-staging
-    # distrobox
+    distrobox
 
     # langs
     nodejs
+    cargo
     bun
     go
     gcc

@@ -13,6 +13,7 @@
     /etc/nixos/hardware-configuration.nix
     ./bootloader.nix
     ../../modules/cache
+    ../../modules/security
     #../../modules/session/gnome.nix
     ../../modules/session/greetd.nix
     ../../modules/session/hyprland.nix
