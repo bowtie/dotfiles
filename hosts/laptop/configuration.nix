@@ -41,6 +41,8 @@
 
   # use Wayland where possible (electron)
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # scale apps to be readable
+  environment.sessionVariables.QT_SCALE_FACTOR = "1.25";
 
   environment.shells = with pkgs; [fish];
 
