@@ -54,6 +54,10 @@
   } @ inputs: let
     username = "zoushie";
     system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     nixosConfigurations."miya" = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs username system;};
@@ -77,10 +81,7 @@
     };
 
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      inherit pkgs;
       extraSpecialArgs = {inherit inputs username spicetify-nix;};
       modules = [
         nur.nixosModules.nur

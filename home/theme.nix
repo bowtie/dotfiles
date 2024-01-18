@@ -99,6 +99,13 @@ in {
 
   qt = {
     enable = true;
-    platformTheme = "kde";
+    platformTheme = "qtct";
+    style = {
+      name = "Catppuccin-Mocha-Dark";
+      package = pkgs.catppuccin-kde.override {
+        flavour = ["mocha"];
+        accents = ["blue"];
+      };
+    };
   };
 }

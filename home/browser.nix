@@ -14,7 +14,7 @@
     };
   };
 
-  home.file.".mozilla/firefox/default/chrome/firefox-tokyo-night/theme.css".source = ../home/firefox/theme.css;
+  home.file.".mozilla/firefox/default/chrome/firefox-tokyo-night/theme.css".source = ../config/firefox/theme.css;
 
   programs.firefox = {
     enable = true;
@@ -36,7 +36,7 @@
           # uBlock settings are written in JSON to be more compatible with the
           # backup format. This checks the syntax.
           adminSettings =
-            builtins.fromJSON (builtins.readFile ./firefox/ublock-settings.json);
+            builtins.fromJSON (builtins.readFile ../config/firefox/ublock-settings.json);
         };
       };
     };
