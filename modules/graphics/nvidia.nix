@@ -3,9 +3,23 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [nvidia-vaapi-driver];
+  };
+
+  environment.variables = {
+    GBM_BACKEND = "nvidia-drm";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
   services.xserver.videoDrivers = ["nvidia"];
+
+  environment.systemPackages = with pkgs; [
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-tools
+  ];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -17,10 +31,6 @@
 
     open = false;
     nvidiaSettings = true; # gui app
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
-
-  # nvidia hyprland patches
-  wayland.windowManager.hyprland.enableNvidiaPatches = true;
-  programs.hyprland.enableNvidiaPatches = true;
 }
