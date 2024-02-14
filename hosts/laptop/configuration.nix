@@ -15,7 +15,7 @@
     ../../modules/cache
     ../../modules/security
     #../../modules/session/gnome.nix
-    ../../modules/session/greetd.nix
+    #../../modules/session/greetd.nix
     ../../modules/session/hyprland.nix
     ../../modules/language/locale.nix
     ../../modules/nix/nix.nix
