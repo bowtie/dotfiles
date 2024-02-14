@@ -3,6 +3,7 @@
     symbol = icon;
     format = "[$symbol ](${color})";
   };
+  os = icon: fg: "[${icon} ](fg:${fg})";
   pad = {
     left = "";
     right = "";
@@ -35,8 +36,8 @@ in {
         when = ''! test $env'';
         format = "  ";
       };
-      continuation_prompt = "[∙](bright-black) ";
-      line_break = {disabled = false;};
+      continuation_prompt = "∙  ┆ ";
+      line_break = { disabled = false; };
       status = {
         symbol = "✗";
         not_found_symbol = "󰍉 Not Found";
@@ -85,14 +86,14 @@ in {
         format = "$symbol";
       };
       os.symbols = {
-        Arch = "[ ](fg:bright-blue)";
-        Debian = "[ ](fg:red)";
-        EndeavourOS = "[ ](fg:purple)";
-        Fedora = "[ ](fg:blue)";
-        NixOS = "[ ](fg:blue)";
-        openSUSE = "[ ](fg:green)";
-        SUSE = "[ ](fg:green)";
-        Ubuntu = "[ ](fg:bright-purple)";
+        Arch = os "" "bright-blue";
+        Debian = os "" "red)";
+        EndeavourOS = os "" "purple";
+        Fedora = os "" "blue";
+        NixOS = os "" "blue";
+        openSUSE = os "" "green";
+        SUSE = os "" "green";
+        Ubuntu = os "" "bright-purple";
       };
       python = lang "" "yellow";
       nodejs = lang " " "yellow";

@@ -16,7 +16,11 @@
     programsdb.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     ags.url = "github:Aylur/ags";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
