@@ -12,7 +12,7 @@
 
   programs.ags = {
     enable = true;
-    configDir = ../ags;
+    configDir = ../config/ags;
     # extraPackages = with pkgs; [
     #   libgtop
     #   libnotify

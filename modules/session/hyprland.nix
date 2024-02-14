@@ -7,7 +7,7 @@
   ags = inputs.ags.packages.${pkgs.system}.ags;
   conf = pkgs.writeText "config" ''
     exec-once = swww init
-    exec-once = swww img ${../../config/ags/assets/leaves.jpg}
+    exec-once = swww img ${../../config/ags/assets/flood.jpg}
     exec-once = ags -c ${../../config/greeter/greeter.js}; hyprctl dispatch exit
     misc {
       disable_hyprland_logo = true
@@ -15,7 +15,7 @@
       force_default_wallpaper = 0
     }
     input {
-      kb_layout = ${config.services.xserver.layout}
+      kb_layout = ${config.services.xserver.xkb.layout}
     }
   '';
 in {

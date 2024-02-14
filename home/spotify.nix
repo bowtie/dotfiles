@@ -23,7 +23,6 @@ in {
 
     enabledCustomApps = with spicePkgs.apps; [
       lyrics-plus
-      new-releases
       reddit
     ];
 

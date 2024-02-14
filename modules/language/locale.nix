@@ -16,7 +16,7 @@
 
   console.useXkbConfig = true;
   services.xserver = {
-    layout = "pt";
-    xkbVariant = "";
+    xkb.layout = "pt";
+    xkb.variant = "";
   };
 }
