@@ -5,8 +5,8 @@
   ...
 }: {
   imports = [
-    ./disk-configuration.nix
-    ./hardware-configuration.nix
+    ./disk.nix
+    ./hardware.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
@@ -48,11 +48,11 @@
     xserver = {
       enable = true;
       excludePackages = [pkgs.xterm];
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+      xkb.layout = "pt";
     };
     flatpak.enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    xserver.xkb.layout = "pt";
   };
 
   # zram configuration instead of swapfile
