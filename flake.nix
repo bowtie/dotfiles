@@ -60,7 +60,7 @@
 
       "yuki" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs username system; };
-        modules = [ ./hosts/yuki ];
+        modules = [ ./hosts/yuki inputs.disko.nixosModules.disko ];
       };
 
       "kana" = nixpkgs.lib.nixosSystem {

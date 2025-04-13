@@ -3,7 +3,7 @@
 {
   programs.ghostty = {
     enable = true;
-    package = pkgs.emptyDirectory;
+    # package = pkgs.emptyDirectory;
     settings = {
       theme = "shibuya";
       font-size = 13;
