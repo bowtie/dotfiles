@@ -20,6 +20,6 @@
   imports = [
     ./dconf.nix  # This includes your dconf settings from the dconf.nix file
     ./ghostty.nix
-    # ./zed.nix
+    ./zed.nix
   ];
 }
