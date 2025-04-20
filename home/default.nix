@@ -19,7 +19,10 @@
   # Import dconf settings (already declared in dconf.nix)
   imports = [
     ./dconf.nix  # This includes your dconf settings from the dconf.nix file
+    ./fastfetch.nix
+    ./fish.nix
     ./ghostty.nix
+    ./starship.nix
     ./zed.nix
   ];
 }

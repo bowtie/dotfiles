@@ -47,11 +47,13 @@
     dconf.enable = true;
     fish.enable = true;
     firefox.enable = true;
+    nix-ld.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
     home-manager
     git
+    micro
 
     # System utilities
     btop            # System monitor
@@ -96,6 +98,7 @@
 
   users.users.${username} = {
     isNormalUser = true;
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
