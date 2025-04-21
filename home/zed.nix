@@ -10,9 +10,8 @@
         diagnostics = false;
         metrics = false;
       };
+      theme = "Tokyo Night";
       # "base_keymap": "VSCode",
     };
   };
 }
-
-

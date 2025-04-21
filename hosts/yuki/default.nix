@@ -72,6 +72,9 @@
 
     # File managers
     yazi             # Lightweight file manager
+
+    # etc
+    figma-linux
   ];
 
   # Wayland + Hyprland fixes

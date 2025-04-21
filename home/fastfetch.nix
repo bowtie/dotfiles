@@ -54,6 +54,7 @@
             type = "colors";
             symbol = "circle";
         }
+        "break"
       ];
     };
   };

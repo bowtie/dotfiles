@@ -18,6 +18,7 @@
 
   # Import dconf settings (already declared in dconf.nix)
   imports = [
+    ./browser.nix
     ./dconf.nix  # This includes your dconf settings from the dconf.nix file
     ./fastfetch.nix
     ./fish.nix
