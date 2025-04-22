@@ -24,6 +24,7 @@
     ./fish.nix
     ./ghostty.nix
     ./starship.nix
+    ./theme.nix
     ./zed.nix
   ];
 }

@@ -6,8 +6,11 @@
 }: {
   imports = [
     ./disk.nix
+    ./gnome.nix
     ./hardware.nix
   ];
+
+  gnome.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
   services.btrfs.autoScrub.enable = true;
@@ -85,8 +88,6 @@
     xserver = {
       enable = true;
       excludePackages = [pkgs.xterm];
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
       xkb.layout = "pt";
     };
     flatpak.enable = true;
