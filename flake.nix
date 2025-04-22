@@ -24,15 +24,25 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    ags.url = "github:Aylur/ags";
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     firefox-gnome-theme = {
       url = "github:rafaelmardojai/firefox-gnome-theme";
       flake = false;
     };
 
-    betterfox.url = "https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js";
-    betterfox.flake = false;
+    betterfox = {
+      url = "https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -40,6 +50,7 @@
     home-manager,
     hardware,
     hyprland,
+    astal,
     ags,
     ...
   } @ inputs: let
