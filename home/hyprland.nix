@@ -12,9 +12,9 @@
     enable = true;
     systemd.enable = false;
 
-    monitor = [",preferred,auto,1"];
-
     settings = {
+      monitor = [",preferred,auto,1"];
+
       general = {
         layout = "dwindle";
         resize_on_border = true;
