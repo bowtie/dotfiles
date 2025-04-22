@@ -1,13 +1,15 @@
-{ config, pkgs, username, ... }:
-
 {
+  pkgs,
+  username,
+  ...
+}: {
   # General configuration for Home Manager
-  home.stateVersion = "24.11";  # Updated stateVersion for the latest Home Manager
+  home.stateVersion = "24.11"; # Updated stateVersion for the latest Home Manager
   programs.home-manager.enable = true;
 
   # Ensure username and home directory are defined
-  home.username = username;  # Set the username here
-  home.homeDirectory = "/home/${username}";  # Define the home directory here
+  home.username = username; # Set the username here
+  home.homeDirectory = "/home/${username}"; # Define the home directory here
 
   # Install GNOME extensions using Home Manager
   home.packages = with pkgs.gnomeExtensions; [
@@ -19,11 +21,11 @@
   # Import dconf settings (already declared in dconf.nix)
   imports = [
     ./browser.nix
-    ./dconf.nix  # This includes your dconf settings from the dconf.nix file
+    ./dconf.nix # This includes your dconf settings from the dconf.nix file
     ./fastfetch.nix
     ./fish.nix
     ./ghostty.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ./starship.nix
     ./zed.nix
   ];

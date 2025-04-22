@@ -1,8 +1,12 @@
-{lib, config, ...}: {
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+{
+  lib,
+  config,
+  ...
+}: {
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "rtsx_pci_sdmmc"];
+  boot.initrd.kernelModules = ["amdgpu"];
+  boot.kernelModules = ["kvm-amd"];
+  boot.extraModulePackages = [];
 
   hardware.enableAllFirmware = true;
   hardware.graphics = {

@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   programs.fastfetch = {
     enable = true;
@@ -51,8 +49,8 @@
         }
         "break"
         {
-            type = "colors";
-            symbol = "circle";
+          type = "colors";
+          symbol = "circle";
         }
         "break"
       ];

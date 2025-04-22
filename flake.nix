@@ -35,8 +35,15 @@
     betterfox.flake = false;
   };
 
-  outputs = { nixpkgs, home-manager, hardware, hyprland, ags, ... } @ inputs: let
-    username = "zoushie";  # Set your username here
+  outputs = {
+    nixpkgs,
+    home-manager,
+    hardware,
+    hyprland,
+    ags,
+    ...
+  } @ inputs: let
+    username = "zoushie"; # Set your username here
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -46,31 +53,31 @@
     # NixOS Configurations for different systems
     nixosConfigurations = {
       "miya" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs username system; };
-        modules = [ ./hosts/desktop/configuration.nix ];
+        specialArgs = {inherit inputs username system;};
+        modules = [./hosts/desktop/configuration.nix];
       };
 
       "swift" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs username system; };
-        modules = [ ./hosts/laptop/configuration.nix ];
+        specialArgs = {inherit inputs username system;};
+        modules = [./hosts/laptop/configuration.nix];
       };
 
       "yuki" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs username system; };
-        modules = [ ./hosts/yuki inputs.disko.nixosModules.disko ];
+        specialArgs = {inherit inputs username system;};
+        modules = [./hosts/yuki inputs.disko.nixosModules.disko];
       };
 
       "kana" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs username system; };
-        modules = [ ./hosts/server/configuration.nix ];
+        specialArgs = {inherit inputs username system;};
+        modules = [./hosts/server/configuration.nix];
       };
     };
 
     # Home Manager Configuration
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit inputs username; };
-      modules = [ ./home ];
+      extraSpecialArgs = {inherit inputs username;};
+      modules = [./home];
     };
   };
 }

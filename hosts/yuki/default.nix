@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   username,
   ...
@@ -61,22 +60,22 @@
     micro
 
     # System utilities
-    btop            # System monitor
+    btop # System monitor
     curl
     unzip
     zip
     rsync
 
     # Modern CLI replacements
-    bat             # Better cat
-    eza             # Modern ls replacement
-    zoxide          # Smarter cd command
-    fzf             # Fuzzy finder
-    ripgrep         # Better grep
-    fd              # Better find
+    bat # Better cat
+    eza # Modern ls replacement
+    zoxide # Smarter cd command
+    fzf # Fuzzy finder
+    ripgrep # Better grep
+    fd # Better find
 
     # File managers
-    yazi            # Lightweight file manager
+    yazi # Lightweight file manager
 
     # etc
     figma-linux
@@ -99,7 +98,7 @@
   zramSwap = {
     enable = true;
     algorithm = "zstd";
-    memoryPercent = 50;  # Adjust as needed
+    memoryPercent = 50; # Adjust as needed
   };
 
   users.users.${username} = {
