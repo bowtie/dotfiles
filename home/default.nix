@@ -25,7 +25,7 @@
     ./fastfetch.nix
     ./fish.nix
     ./ghostty.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ./starship.nix
     ./zed.nix
   ];

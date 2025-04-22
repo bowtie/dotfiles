@@ -10,7 +10,7 @@
     ./hyprland.nix
   ];
 
-  hyprland.enable = true;
+  hyprland.enable = false;
   gnome.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_zen;

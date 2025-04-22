@@ -1,16 +1,7 @@
-{pkgs, ...}: {
-  xdg.desktopEntries."org.gnome.Settings" = {
-    name = "Settings";
-    comment = "Gnome Control Center";
-    icon = "org.gnome.Settings";
-    exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome-control-center}/bin/gnome-control-center";
-    categories = ["X-Preferences"];
-    terminal = false;
-  };
-
+{
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = false;
+    # systemd.enable = false;
 
     settings = {
       monitor = [",preferred,auto,1"];
@@ -58,7 +49,7 @@
       ];
 
       bind = [
-        "SUPER SHIFT, Q, exec,        hyprctl exit"
+        "SUPER SHIFT, Q, exec,        hyprctl dispatch exit"
         "SUPER, Return, exec,         ghostty"
         "SUPER, W, exec,              firefox"
         "SUPER, E, exec,              nautilus"
