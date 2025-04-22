@@ -23,8 +23,8 @@
     ./fastfetch.nix
     ./fish.nix
     ./ghostty.nix
+    ./hyprland.nix
     ./starship.nix
-    ./theme.nix
     ./zed.nix
   ];
 }

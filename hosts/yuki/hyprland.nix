@@ -40,8 +40,8 @@
       baobab
       gnome-text-editor
       gnome-calendar
-      gnome-boxes
-      gnome-system-monitor
+      # gnome-boxes
+      # gnome-system-monitor
       gnome-control-center
       gnome-weather
       gnome-calculator
@@ -83,14 +83,5 @@
         tinysparql.enable = true;
       };
     };
-
-    services.xserver.displayManager.lightdm = {
-      enable = true;
-      greeters.gtk.enable = true;
-    };
-
-    systemd.tmpfiles.rules = [
-      "d '/var/cache/greeter' - greeter greeter - -"
-    ];
   };
 }

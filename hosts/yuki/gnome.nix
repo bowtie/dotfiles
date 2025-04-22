@@ -13,6 +13,7 @@
       systemPackages = with pkgs; [
         morewaita-icon-theme
         qogir-icon-theme
+        wl-clipboard
         ghostty
 
         gnomeExtensions.color-picker
@@ -43,6 +44,8 @@
         atomix # puzzle game
         gnome-contacts
         gnome-initial-setup
+        simple-scan # GNOME Document Scanner
+        gnome-system-monitor # GNOME System Monitor
       ];
     };
 

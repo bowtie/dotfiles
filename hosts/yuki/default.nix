@@ -8,8 +8,10 @@
     ./disk.nix
     ./gnome.nix
     ./hardware.nix
+    ./hyprland.nix
   ];
 
+  hyprland.enable = true;
   gnome.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -74,7 +76,7 @@
     fd              # Better find
 
     # File managers
-    yazi             # Lightweight file manager
+    yazi            # Lightweight file manager
 
     # etc
     figma-linux

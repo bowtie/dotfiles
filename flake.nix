@@ -25,20 +25,17 @@
     };
 
     ags.url = "github:Aylur/ags";
-    lf-icons.url = "github:gokcehan/lf";
-    lf-icons.flake = false;
 
-    more-waita.url = "github:somepaulo/MoreWaita";
-    more-waita.flake = false;
-
-    firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme";
-    firefox-gnome-theme.flake = false;
+    firefox-gnome-theme = {
+      url = "github:rafaelmardojai/firefox-gnome-theme";
+      flake = false;
+    };
 
     betterfox.url = "https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js";
     betterfox.flake = false;
   };
 
-  outputs = { nixpkgs, home-manager, hardware, hyprland, ags, lf-icons, ... } @ inputs: let
+  outputs = { nixpkgs, home-manager, hardware, hyprland, ags, ... } @ inputs: let
     username = "zoushie";  # Set your username here
     system = "x86_64-linux";
     pkgs = import nixpkgs {
