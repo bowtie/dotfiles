@@ -10,6 +10,20 @@
     ./hyprland.nix
   ];
 
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
+  fonts.packages = with pkgs; [
+    adwaita-fonts
+    inter
+    geist-font
+    (callPackage ../../packages/fonts/figtree.nix {})
+  ];
+
   hyprland.enable = false;
   gnome.enable = true;
 

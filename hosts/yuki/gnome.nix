@@ -16,6 +16,7 @@
         wl-clipboard
         ghostty
 
+        gnome-tweaks
         gnomeExtensions.color-picker
       ];
 
