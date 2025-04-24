@@ -6,19 +6,33 @@
   windowrules = import ./windowrules.nix {inherit terminal;};
   keybindings = import ./keybindings.nix {inherit pkgs terminal;};
 in {
+  home.packages = with pkgs; [
+    hyprpaper
+    hyprpicker
+    hypridle
+    hyprlock
+    hyprpolkitagent
+    hyprsunset
+    hyprcursor
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd = {
-      enable = true;
-      variables = ["--all"];
-    };
     xwayland.enable = true;
+    systemd = {
+      enable = false;
+      variables = [
+        "--all"
+      ]; # https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/#programs-dont-work-in-systemd-services-but-do-on-the-terminal
+    };
+    package = null;
+    portalPackage = null;
 
     extraConfig =
       # hyprlang
       ''
         general {
-          gaps_out = 4,12,12,12 # for top bar
+          gaps_out = 12,12,12,12 # for top bar
         }
         decoration {
           shadow {
@@ -32,13 +46,11 @@ in {
     keybindings
     // windowrules
     // {
-      # Startup & daemons
-      # Includes swww daemon, see ./hypr-theme.nix
       exec-once = [
-        "systemctl --user import-environment &"
-        "dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus &"
-        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
-        "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start &"
+        "dbus-update-activation-environment --systemd --all &"
+        "systemctl --user start hyprpolkitagent"
+        "systemctl --user enable --now hyprpaper.service &"
+        "systemctl --user enable --now hypridle.service &"
       ];
 
       env = [
@@ -61,13 +73,13 @@ in {
         "NIXOS_OZONE_WL, 1"
         "ELECTRON_OZONE_PLATFORM_HINT, auto"
 
-        #"XCURSOR_SIZE, 24"
-        #"XCURSOR_THEME, ${config.gtk.cursorTheme.name}"
-        #"HYPRCURSOR_SIZE, 24"
-        #"HYPRCURSOR_THEME, ${config.gtk.cursorTheme.name}"
+        "XCURSOR_SIZE, 24"
+        "XCURSOR_THEME, Bibata-Modern-Classic"
+        "HYPRCURSOR_SIZE, 24"
+        "HYPRCURSOR_THEME, Bibata-Modern-Classic"
       ];
 
-      monitor = ",preferred,auto,auto";
+      monitor = ",preferred,auto,1.0";
       xwayland.force_zero_scaling = true;
 
       dwindle = {
@@ -89,8 +101,8 @@ in {
       decoration = {
         rounding = 5;
 
-        active_opacity = 0.85;
-        inactive_opacity = 0.7;
+        active_opacity = 1;
+        inactive_opacity = 0.85;
         fullscreen_opacity = 1.0;
 
         shadow = {

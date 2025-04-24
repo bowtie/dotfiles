@@ -12,11 +12,15 @@
   home.homeDirectory = "/home/${username}"; # Define the home directory here
 
   # Install GNOME extensions using Home Manager
-  home.packages = with pkgs.gnomeExtensions; [
-    blur-my-shell
-    caffeine
-    user-themes
-  ];
+  home.packages =
+    (with pkgs; [
+      bibata-cursors
+    ])
+    ++ (with pkgs.gnomeExtensions; [
+      blur-my-shell
+      caffeine
+      user-themes
+    ]);
 
   # Import dconf settings (already declared in dconf.nix)
   imports = [

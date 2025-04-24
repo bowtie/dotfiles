@@ -1,9 +1,35 @@
-{
+# HyprPolkitAgent is a simple polkit agent for wayland compositors
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    hyprpaper
+    hyprpicker
+    hypridle
+    hyprlock
+    hyprpolkitagent
+    hyprsunset
+    hyprcursor
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = false;
+    xwayland.enable = true;
+    systemd = {
+      enable = false;
+      variables = [
+        "--all"
+      ]; # https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/#programs-dont-work-in-systemd-services-but-do-on-the-terminal
+    };
+    package = null;
+    portalPackage = null;
 
     settings = {
+      exec-once = [
+        "dbus-update-activation-environment --systemd --all &"
+        "systemctl --user start hyprpolkitagent"
+        "systemctl --user enable --now hyprpaper.service &"
+        "systemctl --user enable --now hypridle.service &"
+      ];
+
       monitor = [",preferred,auto,1"];
 
       general = {

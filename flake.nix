@@ -57,7 +57,8 @@
     username = "zoushie"; # Set your username here
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
-    astalPkgs = import astal.packages.${system};
+    astalPkgs = astal.packages.${system};
+    agsPkgs = ags.packages.${system};
   in {
     # NixOS Configurations for different systems
     nixosConfigurations = {
@@ -85,7 +86,7 @@
     # Home Manager Configuration
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit inputs username;};
+      extraSpecialArgs = {inherit inputs username astalPkgs agsPkgs;};
       modules = [./home];
     };
   };
