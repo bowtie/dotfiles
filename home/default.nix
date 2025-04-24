@@ -20,11 +20,13 @@
 
   # Import dconf settings (already declared in dconf.nix)
   imports = [
+    ./astal.nix
     ./browser.nix
     ./dconf.nix # This includes your dconf settings from the dconf.nix file
     ./fastfetch.nix
     ./fish.nix
     ./ghostty.nix
+    ./hyprland
     # ./hyprland.nix
     ./starship.nix
     ./zed.nix

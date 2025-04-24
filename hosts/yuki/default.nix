@@ -24,7 +24,7 @@
     (callPackage ../../packages/fonts/figtree.nix {})
   ];
 
-  hyprland.enable = false;
+  hyprland.enable = true;
   gnome.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -34,6 +34,8 @@
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
+      allow-dirty = true;
+      warn-dirty = false; # No dirty Git tree reminders on rebuild
       auto-optimise-store = true;
       substituters = [
         # high priority since it's almost always used
@@ -70,28 +72,28 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
-    git
     micro
+    git
 
     # System utilities
-    btop # System monitor
+    btop
     curl
     unzip
     zip
     rsync
 
     # Modern CLI replacements
-    bat # Better cat
-    eza # Modern ls replacement
-    zoxide # Smarter cd command
-    fzf # Fuzzy finder
-    ripgrep # Better grep
-    fd # Better find
+    bat
+    eza
+    zoxide
+    fzf
+    ripgrep
+    fd
 
-    # File managers
-    yazi # Lightweight file manager
+    # File manager
+    yazi
 
-    # etc
+    # Apps
     figma-linux
   ];
 
@@ -112,7 +114,7 @@
   zramSwap = {
     enable = true;
     algorithm = "zstd";
-    memoryPercent = 50; # Adjust as needed
+    memoryPercent = 50;
   };
 
   users.users.${username} = {

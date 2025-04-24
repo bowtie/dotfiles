@@ -11,7 +11,7 @@
   config = lib.mkIf config.hyprland.enable {
     programs.hyprland.withUWSM = true;
     programs.hyprland.enable = true;
-    services.xserver.displayManager.startx.enable = true;
+    programs.hyprland.xwayland.enable = true;
 
     services.logind.extraConfig = ''
       HandlePowerKey=ignore
@@ -23,6 +23,7 @@
       enable = true;
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
       ];
     };
 
