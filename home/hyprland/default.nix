@@ -79,7 +79,7 @@ in {
         "HYPRCURSOR_THEME, Bibata-Modern-Classic"
       ];
 
-      monitor = ",preferred,auto,1.0";
+      monitor = ",preferred,auto,1.25";
       xwayland.force_zero_scaling = true;
 
       dwindle = {

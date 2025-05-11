@@ -1,5 +1,5 @@
 {
-  description = "cfg";
+  description = "NixOS configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -54,13 +54,12 @@
     ags,
     ...
   } @ inputs: let
-    username = "zoushie"; # Set your username here
+    username = "zoushie";
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
     astalPkgs = astal.packages.${system};
     agsPkgs = ags.packages.${system};
   in {
-    # NixOS Configurations for different systems
     nixosConfigurations = {
       "miya" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs username system;};
@@ -83,7 +82,6 @@
       };
     };
 
-    # Home Manager Configuration
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit inputs username astalPkgs agsPkgs;};

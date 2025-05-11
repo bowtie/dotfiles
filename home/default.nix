@@ -15,6 +15,7 @@
   home.packages =
     (with pkgs; [
       bibata-cursors
+      brightnessctl
     ])
     ++ (with pkgs.gnomeExtensions; [
       blur-my-shell

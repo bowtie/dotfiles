@@ -14,7 +14,6 @@
         morewaita-icon-theme
         qogir-icon-theme
         wl-clipboard
-        ghostty
 
         gnome-tweaks
         gnomeExtensions.color-picker
