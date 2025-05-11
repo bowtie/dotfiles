@@ -4,11 +4,8 @@
   ...
 }: {
   imports = [
-    ../modules/shared
-    ./disk.nix
-    ./gnome.nix
+    ../shared
     ./hardware.nix
-    ./hyprland.nix
   ];
 
   hyprland.enable = true;

@@ -1,4 +1,4 @@
-{pkgs}: {
+{pkgs, ...}: {
   fonts.packages = with pkgs; [
     adwaita-fonts
     inter
