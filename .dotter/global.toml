@@ -1,0 +1,30 @@
+[helpers]
+
+[base]
+depends = []
+
+[base.files]
+"home/fish" = "~/.config/fish"
+"home/ghostty" = "~/.config/ghostty"
+"home/fastfetch" = "~/.config/fastfetch"
+"home/zed" = "~/.config/zed"
+"home/niri" = "~/.config/niri"
+
+[base.variables]
+
+[desktop]
+depends = ["base"]
+
+[desktop.files]
+
+[desktop.variables]
+
+[laptop]
+depends = ["base"]
+
+[laptop.files]
+
+[laptop.variables]
+
+[settings]
+default_target_type = "automatic"

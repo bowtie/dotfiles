@@ -1,0 +1,62 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "source": "~/Pictures/Velina01.png",
+    "height": 9,
+    "padding": {
+      "top": 1,
+      "left": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "separator": "  "
+  },
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "format": "{#33}{user-name}{#}{#31}@{#}{#32}{host-name}{#} ~"
+    },
+    {
+      "type": "os",
+      "key": " ",
+      "format": "{#36}\uf303{#}  {#34}System{#}       \ue621 {name~0,-6}"
+    },
+    {
+      "type": "kernel",
+      "key": " ",
+      "format": "{#36}\ue712{#}  {#34}Kernel{#}       \ue621 {release} ({arch})"
+    },
+    {
+      "type": "shell",
+      "key": " ",
+      "format": "{#36}\ue795{#}  {#34}Shell{#}        \ue621 {pretty-name}"
+    },
+    {
+      "type": "uptime",
+      "key": " ",
+      "format": "{#36}\uf017{#}  {#34}Uptime{#}       \ue621 {minutes} minutes"
+    },
+    {
+      "type": "wm",
+      "key": " ",
+      "format": "{#36}\uf2d2{#}  {#34}Desktop{#}      \ue621 {pretty-name} ({protocol-name})"
+    },
+    {
+      "type": "memory",
+      "key": " ",
+      "format": "{#36}\uDB80\uDF5B{#}  {#34}Memory{#}       \ue621 {used} / {total} ({#36}{percentage}{#})"
+    },
+    {
+      "type": "disk",
+      "key": " ",
+      "folders": "/",
+      "format": "{#36}\uDB86\uDD4E{#}  {#34}Storage (/){#}  \ue621 {size-used} / {size-total} ({#36}{size-percentage}{#})"
+    },
+    {
+      "type": "custom",
+      "format": "{#36}\ue22b{#}  {#34}Colors{#}       \ue621 {#34}\uf111{#}  {#36}\uf111{#}  {#32}\uf111{#}  {#33}\uf111{#}  {#31}\uf111{#}  {#35}\uf111{#} "
+    }
+  ]
+}
